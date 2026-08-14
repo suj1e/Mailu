@@ -229,3 +229,186 @@ textarea:focus {
     transition: none !important;
   }
 }
+
+/* ============================================================
+   Notion dark theme (html.dark-mode is toggled by Roundcube's
+   Dark mode switch). Palette follows Notion's dark surfaces:
+   canvas #191919, surface #252525, hairline #2f2f2f.
+   ============================================================ */
+
+/* ---- base ---- */
+html.dark-mode #layout {
+  background: #191919;
+}
+html.dark-mode body,
+html.dark-mode .ui-widget {
+  color: #d4d4d4;
+}
+html.dark-mode a {
+  color: #7cbdf5;
+}
+
+/* ---- left task rail ---- */
+html.dark-mode #taskmenu {
+  background: #191919 !important;
+  border-right-color: #2f2f2f;
+}
+html.dark-mode #taskmenu a {
+  color: #c9c9c9 !important;
+}
+html.dark-mode #taskmenu a:hover {
+  background: rgba(255, 255, 255, .06) !important;
+  color: #e6e6e6 !important;
+}
+html.dark-mode #taskmenu a.selected {
+  background: rgba(0, 117, 222, .25) !important;
+  color: #7cbdf5 !important;
+}
+html.dark-mode #taskmenu .special-buttons a,
+html.dark-mode #taskmenu a.logout {
+  color: #c9c9c9 !important;
+}
+
+/* ---- sidebar (folders) ---- */
+html.dark-mode #layout-sidebar {
+  background: #191919 !important;
+}
+html.dark-mode #layout-sidebar .header {
+  color: #d4d4d4;
+}
+html.dark-mode #layout-sidebar .header a.button {
+  color: #9b9b9b;
+}
+html.dark-mode .menu a,
+html.dark-mode .menu span {
+  color: #c9c9c9 !important;
+}
+html.dark-mode .menu a:hover {
+  background: rgba(255, 255, 255, .06) !important;
+}
+html.dark-mode .menu a.selected {
+  background: rgba(0, 117, 222, .25) !important;
+  color: #7cbdf5 !important;
+}
+html.dark-mode .folder-count {
+  background: #0075de;
+}
+
+/* ---- compose button stays Notion blue ---- */
+html.dark-mode #taskmenu a.compose,
+html.dark-mode .menu a.compose,
+html.dark-mode a.compose {
+  background: #0075de !important;
+  color: #fff !important;
+}
+html.dark-mode #taskmenu a.compose:hover,
+html.dark-mode .menu a.compose:hover,
+html.dark-mode a.compose:hover {
+  background: #005bab !important;
+}
+
+/* ---- list pane ---- */
+html.dark-mode #layout-list {
+  background: #1e1e1e;
+  border-right-color: #2f2f2f;
+}
+html.dark-mode .listing li,
+html.dark-mode .listing td,
+html.dark-mode .messagelist td {
+  border-color: #2f2f2f;
+}
+html.dark-mode .listing li.selected,
+html.dark-mode .listing tr.selected,
+html.dark-mode .messagelist tr.selected {
+  background: rgba(0, 117, 222, .12) !important;
+}
+html.dark-mode .listing li.selected > *,
+html.dark-mode .messagelist tr.selected .subject,
+html.dark-mode .messagelist tr.selected .from {
+  color: #7cbdf5 !important;
+}
+
+/* ---- content pane ---- */
+html.dark-mode #layout-content {
+  background: #191919;
+}
+html.dark-mode #layout-content .header,
+html.dark-mode #layout-content .content {
+  color: #d4d4d4;
+}
+html.dark-mode .message-part,
+html.dark-mode .message-htmlpart,
+html.dark-mode #message-part,
+html.dark-mode #message-html {
+  background: #252525;
+  border-color: #2f2f2f;
+}
+
+/* ---- header buttons & toolbar ---- */
+html.dark-mode .header a.button,
+html.dark-mode .buttons a.button {
+  color: #9b9b9b;
+}
+html.dark-mode .header a.button:hover,
+html.dark-mode .buttons a.button:hover {
+  color: #7cbdf5 !important;
+}
+html.dark-mode .header a.button.selected,
+html.dark-mode .buttons a.button.selected {
+  color: #7cbdf5 !important;
+  background: rgba(0, 117, 222, .25) !important;
+}
+
+/* ---- form controls ---- */
+html.dark-mode .form-control,
+html.dark-mode input[type="text"],
+html.dark-mode input[type="password"],
+html.dark-mode input[type="email"],
+html.dark-mode input[type="search"],
+html.dark-mode select,
+html.dark-mode textarea {
+  background: #252525 !important;
+  border-color: #2f2f2f !important;
+  color: #d4d4d4 !important;
+}
+html.dark-mode .form-control:focus,
+html.dark-mode input:focus,
+html.dark-mode select:focus,
+html.dark-mode textarea:focus {
+  border-color: #0075de !important;
+  box-shadow: 0 0 0 3px rgba(0, 117, 222, .2) !important;
+}
+html.dark-mode .searchbox {
+  background: #252525;
+  border-color: #2f2f2f;
+}
+html.dark-mode .searchbox input {
+  background: #252525 !important;
+  color: #d4d4d4 !important;
+}
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder {
+  color: #6f6f6f;
+}
+
+/* ---- dialogs & menus ---- */
+html.dark-mode .ui-dialog,
+html.dark-mode .popover,
+html.dark-mode .menu.popup {
+  background: #252525 !important;
+  border-color: #2f2f2f !important;
+}
+html.dark-mode .ui-dialog .ui-dialog-titlebar,
+html.dark-mode .ui-dialog .ui-widget-header {
+  background: #252525;
+  color: #d4d4d4;
+}
+html.dark-mode .menu a:not(.compose):hover {
+  background: rgba(255, 255, 255, .06) !important;
+}
+
+/* ---- pagination & footer ---- */
+html.dark-mode .listing-info,
+html.dark-mode .pagenav .pages {
+  color: #9b9b9b;
+}
