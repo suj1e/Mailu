@@ -1,0 +1,231 @@
+/* ============================================================
+   Notion theme override for Roundcube elastic skin.
+   Appended at image build time to skins/elastic/styles/*.css
+   (see webmails/Dockerfile). Light mode only; dark mode keeps
+   upstream styling. Font paths are relative to skins/elastic/styles/.
+   ============================================================ */
+
+/* self-hosted Inter (latin subset; CJK falls back to system fonts) */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/Inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('../fonts/Inter-500.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('../fonts/Inter-600.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/Inter-700.woff2') format('woff2')}
+
+/* ---- base ---- */
+body,
+.ui-widget,
+.ui-widget input,
+.ui-widget button {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+}
+#layout {
+  background: #f6f5f4;
+}
+a {
+  color: #0075de;
+}
+
+/* ---- left task rail (撰写/邮件/联系人/Mailu/设置/注销) ---- */
+#taskmenu {
+  background: #f6f5f4 !important;
+  border-right: 1px solid #e6e6e6;
+}
+#taskmenu a {
+  color: #31302e !important;
+  border-radius: 5px;
+}
+#taskmenu a:hover {
+  background: rgba(0, 0, 0, .04) !important;
+  color: #37352f !important;
+}
+#taskmenu a.selected {
+  background: rgba(0, 117, 222, .1) !important;
+  color: #0075de !important;
+}
+#taskmenu .special-buttons a,
+#taskmenu a.logout {
+  color: #31302e !important;
+}
+
+/* ---- sidebar (folders) ---- */
+#layout-sidebar {
+  background: #f6f5f4 !important;
+}
+#layout-sidebar .header {
+  color: #37352f;
+}
+#layout-sidebar .header a.button {
+  color: #615d59;
+}
+.menu a,
+.menu span {
+  color: #31302e !important;
+}
+.menu a:hover {
+  background: rgba(0, 0, 0, .04) !important;
+}
+.menu a.selected {
+  background: rgba(0, 117, 222, .1) !important;
+  color: #0075de !important;
+}
+/* folder unread badge */
+.folder-count {
+  background: #0075de;
+  color: #fff;
+  border-radius: 9999px;
+}
+
+/* ---- compose button ---- */
+#taskmenu a.compose,
+.menu a.compose,
+a.compose {
+  background: #0075de !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+#taskmenu a.compose:hover,
+.menu a.compose:hover,
+a.compose:hover {
+  background: #005bab !important;
+}
+
+/* ---- list pane (message list) ---- */
+#layout-list {
+  background: #ffffff;
+  border-right: 1px solid #e6e6e6;
+}
+.listing li,
+.listing td,
+.messagelist td {
+  border-color: #e9e9e8;
+}
+.listing li.selected,
+.listing tr.selected,
+.messagelist tr.selected {
+  background: rgba(0, 117, 222, .06) !important;
+}
+.listing li.selected > *,
+.messagelist tr.selected .subject,
+.messagelist tr.selected .from {
+  color: #0075de !important;
+}
+.messagelist tr.unread .subject,
+.messagelist tr.unread .from {
+  font-weight: 600;
+}
+
+/* ---- content pane (message view) ---- */
+#layout-content {
+  background: #f6f5f4;
+}
+#layout-content .header,
+#layout-content .content {
+  color: #37352f;
+}
+#message-header .subject {
+  font-weight: 700;
+  letter-spacing: -.4px;
+}
+/* quoted / html part card */
+.message-part,
+.message-htmlpart,
+#message-part,
+#message-html {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+}
+
+/* ---- header buttons & toolbar ---- */
+.header a.button,
+.buttons a.button {
+  color: #615d59;
+  border-radius: 6px;
+}
+.header a.button:hover,
+.buttons a.button:hover {
+  color: #0075de !important;
+}
+.header a.button.selected,
+.buttons a.button.selected,
+.header a.button:not(.disabled):active {
+  color: #0075de !important;
+  background: rgba(0, 117, 222, .1) !important;
+}
+
+/* ---- form controls ---- */
+.form-control,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+select,
+textarea {
+  border-radius: 5px !important;
+  border-color: #dddddd;
+  font-family: inherit;
+}
+.form-control:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0075de !important;
+  box-shadow: 0 0 0 3px rgba(0, 117, 222, .13) !important;
+  outline: none;
+}
+.searchbox input {
+  border-radius: 8px !important;
+  background: #ffffff;
+}
+.searchbox {
+  border-radius: 8px;
+  border-color: #e6e6e6;
+}
+
+/* ---- buttons ---- */
+.btn {
+  border-radius: 6px;
+}
+.btn-primary,
+.mainaction {
+  background: #0075de !important;
+  border-color: #0075de !important;
+  border-radius: 8px !important;
+}
+.btn-primary:hover,
+.mainaction:hover {
+  background: #005bab !important;
+  border-color: #005bab !important;
+}
+.btn-secondary {
+  border-radius: 8px;
+}
+
+/* ---- dialogs & menus (compose options popover etc.) ---- */
+.ui-dialog,
+.popover,
+.menu.popup {
+  border-radius: 12px !important;
+  box-shadow: 0 .175px 1.041px rgba(0,0,0,.01), 0 .8px 2.925px rgba(0,0,0,.02), 0 2.025px 7.847px rgba(0,0,0,.027), 0 4px 18px rgba(0,0,0,.04);
+  border-color: #e6e6e6;
+}
+.ui-dialog .ui-dialog-titlebar,
+.ui-dialog .ui-widget-header {
+  background: #ffffff;
+  color: #37352f;
+}
+
+/* ---- pagination & footer ---- */
+.listing-info,
+.pagenav .pages {
+  color: #615d59;
+}
+.pagenav a.button {
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

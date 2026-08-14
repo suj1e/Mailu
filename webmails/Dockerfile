@@ -52,6 +52,18 @@ COPY roundcube/config/config.inc.php /conf/
 COPY roundcube/login/ /var/www/roundcube/plugins/mailu/
 COPY roundcube/config/config.inc.carddav.php /var/www/roundcube/plugins/carddav/config.inc.php
 
+# notion theme: self-hosted fonts + override css appended to the
+# elastic skin styles (re-run this block when bumping ROUNDCUBE_URL)
+COPY roundcube/notion-override.css /tmp/notion-override.css
+COPY roundcube/fonts/ /var/www/roundcube/skins/elastic/fonts/
+RUN set -euxo pipefail \
+  ; for f in styles.min.css styles.css; do \
+      if [ -f /var/www/roundcube/skins/elastic/styles/${f} ]; then \
+        cat /tmp/notion-override.css >> /var/www/roundcube/skins/elastic/styles/${f}; \
+      fi; \
+    done \
+  ; rm /tmp/notion-override.css
+
 # snappymail
 
 ENV SNAPPYMAIL_URL https://github.com/the-djmaze/snappymail/releases/download/v2.38.2/snappymail-2.38.2.tar.gz
