@@ -17,3 +17,5 @@ pip-selfcheck.json
 /.idea
 /.vscode
 qemu-arm-static
+.playwright-mcp/
+.zcode/
