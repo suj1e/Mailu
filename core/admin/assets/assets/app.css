@@ -1,3 +1,9 @@
+/* self-hosted Inter (latin subset; CJK falls back to system fonts) */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('Inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('Inter-500.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('Inter-600.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('Inter-700.woff2') format('woff2')}
+
 /* mailu logo */
 .mailu-logo {
   opacity: .8;
@@ -62,4 +68,235 @@ fieldset:disabled .form-control:disabled {
 .mailu-version {
   font-size: 60%;
   line-height: 0;
+}
+
+/* ============================================================
+   Notion theme override (app.css loads after vendor.css, so
+   later rules win at equal specificity; !important only where
+   AdminLTE's compiled selectors are heavier)
+   ============================================================ */
+:root {
+  --nt-primary: #0075de;
+  --nt-primary-active: #005bab;
+  --nt-secondary: #213183;
+  --nt-canvas: #f6f5f4;
+  --nt-surface: #ffffff;
+  --nt-ink: #37352f;
+  --nt-ink-secondary: #31302e;
+  --nt-ink-muted: #615d59;
+  --nt-ink-faint: #a39e98;
+  --nt-hairline: #e6e6e6;
+  --nt-input-border: #dddddd;
+  --nt-shadow: 0 .175px 1.041px rgba(0,0,0,.01), 0 .8px 2.925px rgba(0,0,0,.02), 0 2.025px 7.847px rgba(0,0,0,.027), 0 4px 18px rgba(0,0,0,.04);
+}
+
+/* base */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--nt-canvas);
+  color: var(--nt-ink);
+}
+.content-wrapper {
+  background: var(--nt-canvas);
+}
+
+/* ---- sidebar: warm paper instead of AdminLTE dark ---- */
+.main-sidebar.sidebar-dark-primary {
+  background-color: var(--nt-canvas)!important;
+  background-image: none!important;
+}
+.sidebar-dark-primary .nav-sidebar .nav-link p,
+.sidebar-dark-primary .nav-sidebar .nav-link i.nav-icon {
+  color: var(--nt-ink-secondary)!important;
+}
+.sidebar-dark-primary .nav-sidebar .nav-link:hover {
+  background-color: rgba(0,0,0,.04)!important;
+}
+.sidebar-dark-primary .nav-sidebar .nav-link:hover p,
+.sidebar-dark-primary .nav-sidebar .nav-link:hover i.nav-icon {
+  color: var(--nt-ink)!important;
+}
+.sidebar-dark-primary .nav-sidebar .nav-link.active,
+.sidebar-dark-primary .nav-sidebar .nav-link.active:hover {
+  background-color: rgba(0,117,222,.1)!important;
+}
+.sidebar-dark-primary .nav-sidebar .nav-link.active p,
+.sidebar-dark-primary .nav-sidebar .nav-link.active i.nav-icon {
+  color: var(--nt-primary)!important;
+  font-weight: 500;
+}
+.sidebar-dark-primary .nav-header {
+  color: var(--nt-ink-faint)!important;
+  font-size: .75rem;
+  letter-spacing: .06em;
+}
+.sidebar-dark-primary .user-panel .info a {
+  color: var(--nt-ink)!important;
+  font-weight: 500;
+}
+
+/* brand strip: paper background, dark wordmark */
+.brand-link.bg-mailu-logo {
+  background-color: var(--nt-canvas)!important;
+  border-bottom: 1px solid var(--nt-hairline);
+}
+.brand-link .brand-text {
+  color: var(--nt-ink)!important;
+  font-weight: 700;
+}
+
+/* top navbar & footer */
+.main-header.navbar {
+  background: var(--nt-surface);
+  border-bottom: 1px solid var(--nt-hairline);
+}
+.main-footer {
+  background: var(--nt-canvas);
+  border-top: 1px solid var(--nt-hairline);
+}
+
+/* ---- cards: white surface, hairline border, soft shadow ---- */
+.card.card-outline {
+  border: 1px solid var(--nt-hairline);
+  border-top: 1px solid var(--nt-hairline);
+  border-radius: 12px;
+  box-shadow: var(--nt-shadow);
+}
+.card-header {
+  background: transparent;
+}
+.card-title {
+  font-weight: 600;
+}
+
+/* ---- forms ---- */
+.form-control {
+  border-radius: 4px;
+  border-color: var(--nt-input-border);
+  font-family: inherit;
+}
+.form-control:focus {
+  border-color: var(--nt-primary);
+  box-shadow: 0 0 0 3px rgba(0,117,222,.13);
+}
+.input-group-text {
+  border-radius: 4px;
+}
+
+/* select2 dropdown chrome */
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  border-radius: 4px!important;
+  border-color: var(--nt-input-border)!important;
+}
+
+/* ---- checkbox -> toggle switch (pure CSS, no DOM change;
+      fieldset legend checkboxes keep their name/id so
+      app.js fieldset enable/disable keeps working) ---- */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 32px;
+  height: 18px;
+  border-radius: 9999px;
+  background-color: var(--nt-input-border);
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 0 .5rem 0 0;
+  transition: background-color .15s ease;
+  flex-shrink: 0;
+}
+input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  transition: transform .15s ease;
+}
+input[type="checkbox"]:checked {
+  background-color: var(--nt-primary);
+}
+input[type="checkbox"]:checked::after {
+  transform: translateX(14px);
+}
+input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--nt-primary);
+  outline-offset: 2px;
+}
+/* the &nbsp; spacer WTForms macro renders between input and label */
+input[type="checkbox"] ~ span {
+  display: none;
+}
+input[type="checkbox"] ~ label {
+  margin-left: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+/* read-only state inside disabled fieldsets */
+fieldset:disabled input[type="checkbox"] {
+  opacity: .4;
+}
+
+/* ---- range slider ---- */
+input[type="range"] {
+  accent-color: var(--nt-primary);
+}
+
+/* ---- tables: hairline rows instead of full grid ---- */
+.table-bordered,
+.table-bordered td,
+.table-bordered th {
+  border-color: var(--nt-hairline);
+}
+.table-bordered th {
+  border-bottom: 1px solid var(--nt-hairline);
+}
+.table th {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--nt-ink-faint);
+  font-weight: 600;
+}
+
+/* ---- buttons ---- */
+.btn-default {
+  background-color: var(--nt-primary);
+  border-color: var(--nt-primary);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+}
+.btn-default:hover {
+  background-color: var(--nt-primary-active);
+  border-color: var(--nt-primary-active);
+  color: #fff;
+}
+.btn-primary {
+  background-color: var(--nt-primary);
+  border-color: var(--nt-primary);
+  border-radius: 8px;
+}
+.btn-primary:hover {
+  background-color: var(--nt-primary-active);
+  border-color: var(--nt-primary-active);
+}
+
+/* misc: code chips */
+.pre-config {
+  border: 1px solid var(--nt-hairline);
+  background: var(--nt-canvas);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input[type="checkbox"],
+  input[type="checkbox"]::after {
+    transition: none;
+  }
 }
