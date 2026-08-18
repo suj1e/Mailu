@@ -5803,6 +5803,8 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers select.form-control {
     flex: 1;
     width: auto;
+    color: #31302e;
+    font-weight: 500;
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .tagedit-list {
     flex: 1;
@@ -5810,7 +5812,7 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group-text.icon {
     background: transparent;
     border: 0;
-    color: #a39e98;
+    color: #615d59;
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group-text.icon:hover {
     color: #37352f;
