@@ -1,20 +1,17 @@
 <roundcube:include file="includes/layout.html" />
 <roundcube:include file="includes/menu.html" />
+<roundcube:include file="includes/settings-menu.html" />
 
 <h1 class="voice"><roundcube:label name="preferences" /></h1>
 
-<!-- notion: prototype layout - the main categories and the section list
-     are two columns of the SAME middle pane, not an extra sidebar -->
-<div id="layout-list" class="listbox selected" aria-labelledby="aria-label-prefsection">
+<!-- notion: no extra sidebar here - the rail (includes/menu.html) renders the mailbox links on every task -->
+<div id="layout-list" class="listbox<roundcube:exp expression="!request:_action ? '' : ' selected'"/>" aria-labelledby="aria-label-prefsection">
 	<div class="header">
-		<span id="aria-label-prefsection" class="header-title"><roundcube:label name="settings" /></span>
+		<a class="button icon back-sidebar-button" href="#sidebar"><span class="inner"><roundcube:label name="settings" /></span></a>
+		<span id="aria-label-prefsection" class="header-title"><roundcube:label name="preferences" /></span>
 	</div>
-	<div class="scroller settings-cols">
-		<ul id="settings-menu" class="listing iconized settings-default-icon settings-cat">
-			<roundcube:object name="settingstabs" class="listitem" tagname="li" />
-			<roundcube:container name="tabs" id="settings-menu" />
-		</ul>
-		<roundcube:object name="sectionslist" id="sections-table" class="listing iconized settings-default-icon settings-sub"
+	<div class="scroller">
+		<roundcube:object name="sectionslist" id="sections-table" class="listing iconized settings-default-icon"
 			noheader="true" role="listbox" data-list="sections_list" />
 	</div>
 </div>

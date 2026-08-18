@@ -5387,8 +5387,6 @@ html.layout-phone .image-selector .attachmentslist {
  */
 html:not(.dark-mode) {
   /* ============ list pager ============ */
-  /* ============ settings: categories + sections as two columns of the
-       middle pane (prototype), no extra sidebar pane ============ */
   /* ============ message view ============
        These rules must not depend on the desktop breakpoint: the message
        view renders inside an iframe that is narrower than 1024px. */
@@ -5972,28 +5970,6 @@ html:not(.dark-mode) .pagenav input {
   border-radius: 5px;
   font-size: 11px;
   background: #ffffff;
-}
-html:not(.dark-mode) body.task-settings #layout-sidebar {
-  display: none !important;
-}
-html:not(.dark-mode) body.task-settings .settings-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100%;
-}
-html:not(.dark-mode) body.task-settings .settings-cols .settings-cat {
-  border-right: 1px solid #f0f0ef;
-  overflow-y: auto;
-  padding: 6px;
-}
-html:not(.dark-mode) body.task-settings .settings-cols .settings-sub {
-  overflow-y: auto;
-  padding: 6px;
-}
-html:not(.dark-mode) body.task-settings .settings-cols .settings-sub li,
-html:not(.dark-mode) body.task-settings .settings-cols .settings-sub td {
-  font-size: 12.5px;
-  color: #615d59;
 }
 html:not(.dark-mode) #message-header {
   margin-bottom: 0.75rem;
