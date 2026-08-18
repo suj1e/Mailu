@@ -5725,6 +5725,8 @@ html:not(.dark-mode) body {
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu li,
   html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar li {
+    display: inline-flex;
+    align-items: center;
     height: auto !important;
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a,
