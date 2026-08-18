@@ -400,6 +400,34 @@ html:not(.dark-mode) {
             }
 
             #compose-content {
+                // the responsive toolbar (elastic renders it as #toolbar-menu
+                // below the large breakpoint, #messagetoolbar otherwise)
+                #toolbar-menu,
+                #messagetoolbar {
+                    li {
+                        height: auto !important;
+                    }
+
+                    a {
+                        line-height: 1.5;
+                        padding: 6px 9px;
+                        border-radius: 6px;
+                        font-size: 12px;
+                        color: @color-notion-muted;
+
+                        &:not(.disabled):hover {
+                            background: @color-notion-canvas;
+                            color: @color-notion-ink2;
+                        }
+                    }
+
+                    // the options sidebar is always visible on desktop, so
+                    // this toggle button is redundant
+                    a.options {
+                        display: none !important;
+                    }
+                }
+
                 .compose-headers {
                     padding: 0 16px;
 
@@ -408,6 +436,7 @@ html:not(.dark-mode) {
                         align-items: center;
                         margin: 0;
                         border-bottom: 1px solid #f0f0ef;
+                        display: flex;
 
                         &:last-child {
                             border-bottom: 0;
@@ -426,6 +455,19 @@ html:not(.dark-mode) {
                         padding: 0;
                     }
 
+                    .col-10 {
+                        flex: 1;
+                        max-width: none;
+                        min-width: 0;
+                    }
+
+                    .input-group {
+                        display: flex;
+                        align-items: center;
+                        flex: 1;
+                        min-width: 0;
+                    }
+
                     .form-control,
                     .tagedit-list,
                     input {
@@ -434,6 +476,15 @@ html:not(.dark-mode) {
                         background: transparent;
                         font-size: 14px;
                         padding: 10px 0;
+                    }
+
+                    select.form-control {
+                        flex: 1;
+                        width: auto;
+                    }
+
+                    .tagedit-list {
+                        flex: 1;
                     }
 
                     .input-group-text.icon {
@@ -445,6 +496,10 @@ html:not(.dark-mode) {
                             color: @color-notion-ink;
                         }
                     }
+                }
+
+                #composebodycontainer textarea {
+                    width: 100% !important;
                 }
 
                 .formbuttons {

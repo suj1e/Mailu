@@ -5725,6 +5725,27 @@ html:not(.dark-mode) {
     font-size: 12.5px;
     padding: 0 8px;
   }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu li,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar li {
+    height: auto !important;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar a {
+    line-height: 1.5;
+    padding: 6px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #615d59;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a:not(.disabled):hover,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar a:not(.disabled):hover {
+    background: #f6f5f4;
+    color: #31302e;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a.options,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar a.options {
+    display: none !important;
+  }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers {
     padding: 0 16px;
   }
@@ -5733,6 +5754,7 @@ html:not(.dark-mode) {
     align-items: center;
     margin: 0;
     border-bottom: 1px solid #f0f0ef;
+    display: flex;
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-group.row:last-child {
     border-bottom: 0;
@@ -5747,6 +5769,17 @@ html:not(.dark-mode) {
     font-size: 13px;
     padding: 0;
   }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .col-10 {
+    flex: 1;
+    max-width: none;
+    min-width: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-control,
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .tagedit-list,
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers input {
@@ -5756,6 +5789,13 @@ html:not(.dark-mode) {
     font-size: 14px;
     padding: 10px 0;
   }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers select.form-control {
+    flex: 1;
+    width: auto;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .tagedit-list {
+    flex: 1;
+  }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group-text.icon {
     background: transparent;
     border: 0;
@@ -5763,6 +5803,9 @@ html:not(.dark-mode) {
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group-text.icon:hover {
     color: #37352f;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #composebodycontainer textarea {
+    width: 100% !important;
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .formbuttons {
     padding: 12px 16px;
