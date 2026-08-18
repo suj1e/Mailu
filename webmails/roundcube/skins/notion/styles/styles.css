@@ -5607,6 +5607,10 @@ html:not(.dark-mode) body {
     padding: 4px 8px;
     border-bottom: 1px solid #e6e6e6;
   }
+  html:not(.dark-mode) #layout-list > .header a.selection,
+  html:not(.dark-mode) #layout-content > .header a.selection {
+    display: none !important;
+  }
   html:not(.dark-mode) #layout-list > .header .menu.toolbar li,
   html:not(.dark-mode) #layout-content > .header .menu.toolbar li {
     height: auto;
