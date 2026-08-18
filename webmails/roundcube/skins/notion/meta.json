@@ -1,5 +1,6 @@
 {
   "name": "Notion",
+  "extends": "elastic",
   "author": "Mailu fork (based on Roundcube Elastic)",
   "license": "Creative Commons Attribution-ShareAlike",
   "license-url": "http://creativecommons.org/licenses/by-sa/3.0/",
