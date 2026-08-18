@@ -721,3 +721,38 @@ html.dark-mode #settings-menu li.selected > a {
   background: rgba(0, 117, 222, .25);
   color: #7cbdf5;
 }
+
+/* ============================================================
+   v3b: template-inserted nodes (templates-override/) styling
+   - .menu-section: small uppercase captions in the task rail
+   - .sidebar-account: username line above folders on non-mail tasks
+   ============================================================ */
+.menu-section {
+  display: block;
+  padding: 10px 10px 4px;
+  margin: 0;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #a39e98;
+  cursor: default;
+}
+#taskmenu .menu-section { margin: 0 6px; }
+.special-buttons .menu-section { margin: 0; }
+/* username line on the addressbook/settings sidebar */
+.sidebar-account {
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #37352f;
+  word-break: break-all;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 4px;
+}
+/* the mailbox treelist on non-mail tasks sits above the task's own list */
+#layout-sidebar .menu-section + .treelist {
+  margin-bottom: 6px;
+}
+html.dark-mode .menu-section { color: #6f6f6f; }
+html.dark-mode .sidebar-account { color: #d4d4d4; border-bottom-color: #2f2f2f; }

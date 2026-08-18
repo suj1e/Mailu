@@ -52,6 +52,12 @@ COPY roundcube/config/config.inc.php /conf/
 COPY roundcube/login/ /var/www/roundcube/plugins/mailu/
 COPY roundcube/config/config.inc.carddav.php /var/www/roundcube/plugins/carddav/config.inc.php
 
+# notion theme: elastic template overrides (official 1.6.18 sources with
+# minimal inserts — unified sidebar rail + section captions)
+COPY roundcube/templates-override/includes/menu.html /var/www/roundcube/skins/elastic/templates/includes/menu.html
+COPY roundcube/templates-override/addressbook.html /var/www/roundcube/skins/elastic/templates/addressbook.html
+COPY roundcube/templates-override/settings.html /var/www/roundcube/skins/elastic/templates/settings.html
+
 # notion theme: self-hosted fonts + override css appended to the
 # elastic skin styles (re-run this block when bumping ROUNDCUBE_URL)
 COPY roundcube/notion-override.css /tmp/notion-override.css
