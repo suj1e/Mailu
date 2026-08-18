@@ -51,13 +51,6 @@
 		<span class="special-buttons">
 			<!-- notion: section caption before the account group -->
 			<div class="menu-section menu-section-account"><span>账户</span></div>
-			<roundcube:if condition="config:dark_mode_support" />
-				<roundcube:add_label name="darkmode" />
-				<roundcube:add_label name="lightmode" />
-				<roundcube:button name="theme" label="darkmode" type="link" innerClass="inner" class="theme dark" />
-			<roundcube:endif />
-			<roundcube:button name="about" label="about" type="link"
-				class="about" innerClass="inner" onclick="UI.about_dialog(this)" />
 			<roundcube:button command="logout" label="logout" type="link"
 				class="logout" innerClass="inner" />
 		</span>
