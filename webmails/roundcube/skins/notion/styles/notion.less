@@ -524,6 +524,16 @@ html:not(.dark-mode) {
                         flex: 1;
                     }
 
+                    // the recipient input is a ul.form-control; elastic's
+                    // own .recipient-input.focus rule draws a second blue
+                    // ring inside the row focus ring - neutralize it, the
+                    // row highlight is the only focus indicator
+                    .recipient-input {
+                        border: 0 !important;
+                        box-shadow: none !important;
+                        background: transparent;
+                    }
+
                     .input-group-text.icon {
                         background: transparent;
                         border: 0;

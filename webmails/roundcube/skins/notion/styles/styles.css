@@ -5821,6 +5821,11 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .tagedit-list {
     flex: 1;
   }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .recipient-input {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent;
+  }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group-text.icon {
     background: transparent;
     border: 0;
