@@ -294,6 +294,161 @@ input[type="range"] {
   background: var(--nt-canvas);
 }
 
+/* ============================================================
+   SSO split-screen login (base_sso.html surgery).
+   Uses the same --nt-* tokens as the admin theme.
+   ============================================================ */
+body.sso-split { background: var(--nt-canvas); }
+body.sso-split .sso-app {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 100vh;
+}
+
+/* ---- left brand hero ---- */
+.sso-hero {
+  background: #213183;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px 64px;
+  overflow: hidden;
+}
+.sso-hero::before {
+  content: "";
+  position: absolute;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.08);
+  right: -160px; top: -160px;
+}
+.sso-hero::after {
+  content: "";
+  position: absolute;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.06);
+  left: -120px; bottom: -120px;
+}
+.sso-hero-brand { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }
+.sso-hero-brand img {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.sso-hero-name { font-size: 20px; font-weight: 700; letter-spacing: .02em; }
+.sso-hero-center { position: relative; z-index: 1; }
+.sso-hero-big { font-size: 44px; font-weight: 900; line-height: 1.25; margin-bottom: 18px; }
+.sso-hero-big em { font-style: normal; color: #9cc4f0; }
+.sso-hero-desc { font-size: 15px; line-height: 1.9; color: rgba(255,255,255,.72); max-width: 34em; }
+.sso-hero-points { display: flex; gap: 28px; margin-top: 32px; }
+.sso-pt { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,.85); }
+.sso-pt i { color: #9cc4f0; font-size: 15px; }
+.sso-hero-foot { position: relative; z-index: 1; font-size: 12.5px; color: rgba(255,255,255,.45); letter-spacing: .05em; }
+
+/* ---- right login panel ---- */
+.sso-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 40px;
+  background: var(--nt-canvas);
+}
+.sso-flash { width: 100%; max-width: 380px; margin-bottom: 12px; }
+.sso-flash .alert {
+  border-radius: 8px;
+  border: 1px solid var(--nt-hairline);
+  padding: 10px 14px;
+  font-size: 13px;
+}
+.sso-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--nt-surface);
+  border: 1px solid var(--nt-hairline);
+  border-radius: 14px;
+  box-shadow: var(--nt-shadow);
+  padding: 36px 34px 28px;
+}
+.sso-title { font-size: 22px; font-weight: 700; letter-spacing: -.3px; margin-bottom: 4px; color: var(--nt-ink); }
+.sso-sub { font-size: 13px; color: var(--nt-ink-muted); margin-bottom: 26px; }
+.sso-field { margin-bottom: 18px; }
+.sso-label { display: block; font-size: 13px; font-weight: 500; color: var(--nt-ink-secondary); margin-bottom: 6px; }
+.sso-input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--nt-input-border);
+  border-radius: 5px;
+  background: var(--nt-surface);
+  padding: 0 13px;
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--nt-ink);
+  transition: border-color .14s, box-shadow .14s;
+}
+.sso-input::placeholder { color: var(--nt-ink-faint); }
+.sso-input:focus {
+  outline: none;
+  border-color: var(--nt-primary);
+  box-shadow: 0 0 0 3px rgba(0,117,222,.13);
+}
+.sso-error { font-size: 12px; color: #e03e3e; margin-top: 5px; }
+.sso-btn-login {
+  width: 100%;
+  height: 44px;
+  margin-top: 10px;
+  background: var(--nt-primary);
+  border: 1px solid var(--nt-primary);
+  border-radius: 9px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  cursor: pointer;
+  box-shadow: 0 6px 16px -6px rgba(0,117,222,.45);
+  transition: background .14s;
+}
+.sso-btn-login:hover { background: #005bab; border-color: #005bab; }
+.sso-btn-login:active { transform: translateY(1px); }
+.sso-admin-row {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--nt-hairline);
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--nt-ink-faint);
+}
+.sso-admin-link {
+  background: none;
+  border: none;
+  padding: 0 0 1px 0;
+  margin-left: 2px;
+  font-family: inherit;
+  font-size: 12.5px;
+  color: var(--nt-ink-muted);
+  border-bottom: 1px dashed var(--nt-ink-faint);
+  cursor: pointer;
+}
+.sso-admin-link:hover { color: var(--nt-primary); border-bottom-color: var(--nt-primary); }
+.sso-panel-foot { margin-top: 26px; font-size: 12px; color: var(--nt-ink-faint); }
+
+/* narrow screens: hero collapses to a top bar */
+@media (max-width: 880px) {
+  body.sso-split .sso-app { grid-template-columns: 1fr; }
+  .sso-hero { padding: 28px 24px; flex-direction: row; align-items: center; justify-content: flex-start; }
+  .sso-hero::before, .sso-hero::after { display: none; }
+  .sso-hero-center, .sso-hero-foot { display: none; }
+  .sso-hero-name { font-size: 16px; }
+  .sso-hero-brand img { width: 40px; height: 40px; }
+  .sso-panel { padding: 32px 20px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   input[type="checkbox"],
   input[type="checkbox"]::after {

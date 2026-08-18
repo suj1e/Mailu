@@ -5,80 +5,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% trans %}Admin page for{% endtrans %} {{ config["SITENAME"] }}">
+    <meta name="description" content="{{ config["SITENAME"] }}">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Mailu-Admin | {{ config["SITENAME"] }}</title>
+    <title>{{ config["SITENAME"] }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
   </head>
-  <body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars" title="{% trans %}toggle sidebar{% endtrans %}" aria-expanded="false"></i><span class="sr-only">{% trans %}toggle sidebar{% endtrans %}</span></a>
-          </li>
-          <li class="nav-item">
-          {%- for page, url in path %}
-            {%- if loop.index > 1 %}
-            <i class="fas fa-greater-than text-xs text-gray" aria-hidden="true"></i>
-            {%- endif %}
-            {%- if url %}
-            <a class="nav-link d-inline-block" href="{{ url }}" role="button">{{ page }}</a>
-            {%- else %}
-            <span class="nav-link d-inline-block">{{ page }}</span>
-            {%- endif %}
-          {%- endfor %}
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
-              <i class="fas fa-language text-xl" aria-hidden="true" title="{% trans %}change language{% endtrans %}"></i><span class="sr-only">{% trans %}change language{% endtrans %}</span>
-              <span class="badge badge-primary navbar-badge">{{ get_locale() }}</span></a>
-            <div class="dropdown-menu dropdown-menu-right p-0" id="mailu-languages">
-            {%- for locale in config.translations.values() %}
-              <a class="dropdown-item{% if locale|string() == session['language'] %} active{% endif %}" href="{{ url_for('sso.set_language', language=locale) }}">{{ locale.get_language_name().title() }}</a>
-            {%- endfor %}
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <aside class="main-sidebar sidebar-dark-primary nav-compact elevation-4">
-        <a class="brand-link bg-mailu-logo"{% if config["LOGO_BACKGROUND"] %} style="background-color:{{ config["LOGO_BACKGROUND"] }}!important;"{% endif %}>
-          <img src="{{ config["LOGO_URL"] if config["LOGO_URL"] else '/static/mailu.png' }}" width="33" height="33" alt="Mailu" class="brand-image mailu-logo img-circle elevation-3">
-          <span class="brand-text font-weight-light">{{ config["SITENAME"] }}</span>
-        </a>
-        {%- include "sidebar_sso.html" %}
-      </aside>
-      <div class="content-wrapper text-sm">
-        <section class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1 class="m-0">{%- block title %}{%- endblock %}</h1>
-                <small>{% block subtitle %}{% endblock %}</small>
-              </div>
-              <div class="col-sm-6">
-                {%- block main_action %}{%- endblock %}
-              </div>
-            </div>
-          </div>
-        </section>
-        <div class="content">
-          {{ utils.flashed_messages(container=False, default_category='success') }}
-          {%- block content %}{%- endblock %}
+  <body class="sso-split">
+    <div class="sso-app">
+
+      {#- 左:品牌墙(企业门户) -#}
+      <div class="sso-hero">
+        <div class="sso-hero-brand">
+          <img src="{{ config["LOGO_URL"] if config["LOGO_URL"] else '/static/mailu.png' }}" alt="{{ config["SITENAME"] }}">
+          <div class="sso-hero-name">{{ config["SITENAME"] }}</div>
         </div>
+
+        <div class="sso-hero-center">
+          <div class="sso-hero-big">企业级邮件<br>从自己的<em>服务器</em>开始</div>
+          <div class="sso-hero-desc">{{ config["SITENAME"] }} 运行于企业自有基础设施,提供安全、私密、稳定的邮件服务。数据不出企业边界,收发尽在掌握。</div>
+          <div class="sso-hero-points">
+            <span class="sso-pt"><i class="fas fa-shield-alt" aria-hidden="true"></i>私有部署</span>
+            <span class="sso-pt"><i class="fas fa-lock" aria-hidden="true"></i>全程加密</span>
+            <span class="sso-pt"><i class="fas fa-check-circle" aria-hidden="true"></i>稳定可靠</span>
+          </div>
+        </div>
+
+        <div class="sso-hero-foot">合肥哈工艾斯德康智能科技有限公司</div>
       </div>
-      <footer class="main-footer">
-        Built with <i class="fa fa-heart text-danger" aria-hidden="true"></i><span class="sr-only">love</span>
-        using <a href="https://flask.palletsprojects.com/">Flask</a>
-        and <a href="https://adminlte.io/themes/v3/index3.html">AdminLTE</a>.
-        <span class="fa-pull-right">
-          <i class="fa fa-code-branch" aria-hidden="true"></i><span class="sr-only">fork</span>
-          on <a href="https://github.com/Mailu/Mailu">Github</a>
-        </span>
-      </footer>
+
+      {#- 右:登录/内容区 -#}
+      <div class="sso-panel">
+        <div class="sso-flash">
+          {{ utils.flashed_messages(container=False, default_category='success') }}
+        </div>
+        {%- block content %}{%- endblock %}
+        <div class="sso-panel-foot">© 2026 {{ config["SITENAME"] }} · 内部系统</div>
+      </div>
+
     </div>
     <script src="{{ url_for('static', filename='vendor.js') }}"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>

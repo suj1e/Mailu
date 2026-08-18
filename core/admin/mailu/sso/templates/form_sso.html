@@ -1,12 +1,32 @@
 {%- extends "base_sso.html" %}
 
 {%- block content %}
-{%- call macros.card() %}
-<form class="form" method="post" role="form">
-  {{ form.hidden_tag() }}
-  {{ macros.form_field(form.email) }}
-  {{ macros.form_field(form.pw) }}
-  {{ macros.form_fields(fields, label=False, class="btn btn-default") }}
-</form>
-{%- endcall %}
+<div class="sso-card">
+  <h1 class="sso-title">{% trans %}Sign in{% endtrans %}</h1>
+  <div class="sso-sub">使用您的企业邮箱账号</div>
+  <form class="form" method="post" role="form">
+    {{ form.hidden_tag() }}
+    <div class="sso-field">
+      <label class="sso-label" for="email">{% trans %}E-mail{% endtrans %}</label>
+      {{ form.email(class_="sso-input", autofocus=True, placeholder="you@example.com") }}
+      {%- for error in form.email.errors %}
+      <p class="sso-error">{{ error }}</p>
+      {%- endfor %}
+    </div>
+    <div class="sso-field">
+      <label class="sso-label" for="pw">{% trans %}Password{% endtrans %}</label>
+      {{ form.pw(class_="sso-input", placeholder="••••••••") }}
+      {%- for error in form.pw.errors %}
+      <p class="sso-error">{{ error }}</p>
+      {%- endfor %}
+    </div>
+    {#- 目的地按钮:name 与后端字段一致,行为不变。
+        url 参数(从哪来回哪去)由后端 _has_usable_redirect 优先处理。 -#}
+    <button type="submit" name="submitWebmail" class="sso-btn-login">登 录</button>
+    <div class="sso-admin-row">
+      需要管理后台?
+      <button type="submit" name="submitAdmin" class="sso-admin-link">管理后台 →</button>
+    </div>
+  </form>
+</div>
 {%- endblock %}

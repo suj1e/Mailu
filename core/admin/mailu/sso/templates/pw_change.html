@@ -1,13 +1,33 @@
 {%- extends "base_sso.html" %}
 
 {%- block content %}
-{%- call macros.card() %}
-<form class="form" method="post" role="form">
-  {{ form.hidden_tag() }}
-  {{ macros.form_field(form.oldpw) }}
-  {{ macros.form_field(form.pw) }}
-  {{ macros.form_field(form.pw2) }}
-  {{ macros.form_field(form.submit) }}
-</form>
-{%- endcall %}
+<div class="sso-card">
+  <h1 class="sso-title">{% trans %}Password update{% endtrans %}</h1>
+  <div class="sso-sub">首次登录或管理员要求修改密码</div>
+  <form class="form" method="post" role="form">
+    {{ form.hidden_tag() }}
+    <div class="sso-field">
+      <label class="sso-label" for="oldpw">{% trans %}Current password{% endtrans %}</label>
+      {{ form.oldpw(class_="sso-input", autofocus=True) }}
+      {%- for error in form.oldpw.errors %}
+      <p class="sso-error">{{ error }}</p>
+      {%- endfor %}
+    </div>
+    <div class="sso-field">
+      <label class="sso-label" for="pw">{% trans %}Password{% endtrans %}</label>
+      {{ form.pw(class_="sso-input") }}
+      {%- for error in form.pw.errors %}
+      <p class="sso-error">{{ error }}</p>
+      {%- endfor %}
+    </div>
+    <div class="sso-field">
+      <label class="sso-label" for="pw2">{% trans %}Password check{% endtrans %}</label>
+      {{ form.pw2(class_="sso-input") }}
+      {%- for error in form.pw2.errors %}
+      <p class="sso-error">{{ error }}</p>
+      {%- endfor %}
+    </div>
+    <button type="submit" class="sso-btn-login">{% trans %}Update password{% endtrans %}</button>
+  </form>
+</div>
 {%- endblock %}
