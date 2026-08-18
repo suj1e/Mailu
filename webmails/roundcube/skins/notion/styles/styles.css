@@ -5791,9 +5791,8 @@ html:not(.dark-mode) body {
     flex: 1;
     min-width: 0;
   }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-control,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .tagedit-list,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers input {
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers input,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .tagedit-list {
     border: 0;
     box-shadow: none;
     background: transparent;
@@ -5803,6 +5802,8 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers select.form-control {
     flex: 1;
     width: auto;
+    padding: 0;
+    height: 34px;
     color: #31302e;
     font-weight: 500;
   }

@@ -493,9 +493,8 @@ html:not(.dark-mode) {
                         min-width: 0;
                     }
 
-                    .form-control,
-                    .tagedit-list,
-                    input {
+                    input,
+                    .tagedit-list {
                         border: 0;
                         box-shadow: none;
                         background: transparent;
@@ -506,6 +505,10 @@ html:not(.dark-mode) {
                     select.form-control {
                         flex: 1;
                         width: auto;
+                        // Chrome clips the text of native selects that carry
+                        // padding, so keep padding off and fix the height
+                        padding: 0;
+                        height: 34px;
                         // explicit dark text: native selects can render with
                         // a washed-out color otherwise
                         color: @color-notion-ink2;
