@@ -8,7 +8,10 @@
  */
 
 html:not(.dark-mode) {
-    @media screen and (min-width: (@screen-width-medium + 1px)) {
+    // desktop rail from 769px up; below that elastic keeps its mobile
+    // off-canvas menu. 1024-768 would otherwise fall back to elastic's
+    // 42px icon rail and break the account block
+    @media screen and (min-width: (@screen-width-small + 1px)) {
         /* ============ left rail ============ */
 
         #layout-menu {
@@ -165,12 +168,12 @@ html:not(.dark-mode) {
             }
 
             // account group pinned to the bottom of the rail with breathing
-            // room below it
+            // room below it (sticky bottom keeps it off the window edge)
             .special-buttons {
                 position: sticky;
-                bottom: 0;
+                bottom: 16px;
                 margin-top: auto;
-                padding: 8px 0 16px;
+                padding: 8px 0 8px;
                 border-top: 1px solid @color-layout-border;
             }
 
@@ -228,6 +231,7 @@ html:not(.dark-mode) {
                         padding: 0 5px;
                         margin: 0;
                         top: 50%;
+                        right: 10px;
                         transform: translateY(-50%);
                     }
                 }
@@ -501,6 +505,10 @@ html:not(.dark-mode) {
 
                 #composebodycontainer textarea {
                     width: 100% !important;
+                    border: 0;
+                    outline: 0;
+                    resize: none;
+                    padding: 16px;
                 }
 
                 .formbuttons {
