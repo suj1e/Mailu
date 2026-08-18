@@ -175,6 +175,10 @@ html:not(.dark-mode) {
                 margin: 0;
 
                 li {
+                    // .menu.toolbar li makes them inline-block; keep them stacked
+                    display: block;
+                    height: auto;
+
                     & > a {
                         padding: 7px 9px !important;
                         font-size: 12.5px;
@@ -292,41 +296,6 @@ html:not(.dark-mode) {
                     color: @color-notion-ink2;
                 }
             }
-        }
-
-        /* ============ message view ============ */
-
-        #message-header {
-            margin-bottom: .75rem;
-
-            & > .subject {
-                font-size: 18px;
-                font-weight: 700;
-                letter-spacing: -.3px;
-                line-height: 1.4;
-                margin-bottom: 10px;
-            }
-
-            .header-summary {
-                font-size: 12.5px;
-                color: @color-notion-muted;
-            }
-
-            .header-links a {
-                color: @color-main;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        #message-content .attachmentslist {
-            background: @color-notion-canvas;
-            border: 1px solid @color-notion-line;
-            border-radius: 8px;
-            padding: 2px 12px;
-            width: fit-content;
         }
 
         /* ============ compose ============ */
@@ -493,6 +462,43 @@ html:not(.dark-mode) {
                 }
             }
         }
+    }
+
+    /* ============ message view ============
+       These rules must not depend on the desktop breakpoint: the message
+       view renders inside an iframe that is narrower than 1024px. */
+
+    #message-header {
+        margin-bottom: .75rem;
+
+        & > .subject {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -.3px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .header-summary {
+            font-size: 12.5px;
+            color: @color-notion-muted;
+        }
+
+        .header-links a {
+            color: @color-main;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #message-content .attachmentslist {
+        background: @color-notion-canvas;
+        border: 1px solid @color-notion-line;
+        border-radius: 8px;
+        padding: 2px 12px;
+        width: fit-content;
     }
 
     /* ============ mail task: folders live in the rail ============ */
