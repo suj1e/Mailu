@@ -319,10 +319,10 @@ html:not(.dark-mode) {
             li {
                 // inline-block items align on the text baseline, so buttons
                 // with different content heights end up on different lines;
-                // flex centers them all on one row
+                // flex + a fixed height puts every row on the same line
                 display: inline-flex;
                 align-items: center;
-                height: auto !important;
+                height: 44px !important;
             }
 
             a {
@@ -345,6 +345,7 @@ html:not(.dark-mode) {
             .dropbutton {
                 display: inline-flex;
                 align-items: center;
+                height: 100%;
 
                 a.dropdown {
                     font-size: 12px;

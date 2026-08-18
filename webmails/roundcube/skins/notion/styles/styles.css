@@ -5654,7 +5654,7 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) #mailtoolbar li {
     display: inline-flex;
     align-items: center;
-    height: auto !important;
+    height: 44px !important;
   }
   html:not(.dark-mode) #toolbar-menu a,
   html:not(.dark-mode) #messagetoolbar a,
@@ -5676,6 +5676,7 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) #mailtoolbar .dropbutton {
     display: inline-flex;
     align-items: center;
+    height: 100%;
   }
   html:not(.dark-mode) #toolbar-menu .dropbutton a.dropdown,
   html:not(.dark-mode) #messagetoolbar .dropbutton a.dropdown,
