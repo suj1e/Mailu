@@ -67,8 +67,14 @@
 			</div>
 			<roundcube:endif />
 		</div>
+		<!-- notion: open-in-new-window moved to the panel bottom (prototype) -->
+		<roundcube:if condition="!env:extwin" />
+		<div class="compose-extwin">
+			<roundcube:button command="extwin" type="link" label="openinextwin" data-hidden="small" class="button icon extwin" data-tabindex="1" />
+		</div>
+		<roundcube:endif />
+		</div>
 	</div>
-</div>
 
 <div id="layout-content" class="listbox selected" role="main">
 	<h2 id="aria-label-toolbar" class="voice"><roundcube:label name="arialabeltoolbar" /></h2>
@@ -221,9 +227,6 @@
 		</form>
 		<div class="formbuttons">
 			<roundcube:button command="send" class="btn btn-primary send" label="send" tabindex="1" data-content-button="true" />
-			<div class="float-right">
-				<roundcube:button command="extwin" type="link" label="openinextwin" data-hidden="small" class="button icon btn btn-link extwin" data-tabindex="1" condition="!env:extwin" />
-			</div>
 		</div>
 	</div>
 </div>
