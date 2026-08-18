@@ -501,3 +501,223 @@ html.dark-mode .messagelist tbody tr.message:not(.selected):not(.focused):hover 
 .header .buttons .button:hover {
   background: rgba(0, 117, 222, .08) !important;
 }
+
+/* ============================================================
+   v3 full webmail reskin (selectors verified against live DOM
+   of roundcube 1.6.18 / elastic). Layered on top of v1/v2.
+   ============================================================ */
+
+/* ---- 3a. task rail (.toolbar) refinement ---- */
+.toolbar a {
+  border-radius: 7px;
+  color: var(--ink, #31302e);
+}
+.toolbar a:hover {
+  background: rgba(0, 0, 0, .05) !important;
+  color: #37352f !important;
+}
+.toolbar a.selected {
+  background: rgba(0, 117, 222, .12) !important;
+  color: #0075de !important;
+}
+.toolbar a.compose {
+  box-shadow: 0 4px 10px -3px rgba(0, 117, 222, .45);
+}
+
+/* ---- 3b. sidebar panes (folders / groups / settings share .treelist) ---- */
+#layout-sidebar .header .header-title.username {
+  color: #37352f;
+  font-weight: 600;
+}
+#layout-sidebar .header a.button,
+#layout-list .header a.button.icon {
+  border-radius: 7px;
+}
+#layout-sidebar .header a.button:hover,
+#layout-list .header a.button.icon:hover {
+  background: rgba(0, 0, 0, .05);
+}
+.treelist li a {
+  border-radius: 7px;
+  margin: 1px 6px;
+  padding: 7px 9px;
+  color: #31302e;
+}
+.treelist li a:hover {
+  background: rgba(0, 0, 0, .045);
+}
+.treelist li.selected > a,
+.treelist li.selected > a:hover {
+  background: rgba(0, 117, 222, .12);
+  color: #0075de;
+  box-shadow: inset 2.5px 0 0 #0075de;
+}
+.treelist .unreadcount {
+  background: #0075de;
+  border-radius: 9999px;
+  font-weight: 700;
+  padding: 1px 7px;
+}
+
+/* ---- 3c. list pane tool row + search ---- */
+#layout-list .header ul.menu.toolbar a,
+#layout-list .header .toolbar-buttons a {
+  border-radius: 6px;
+  color: #615d59;
+}
+#layout-list .header ul.menu.toolbar a:hover,
+#layout-list .header .toolbar-buttons a:hover {
+  background: var(--nt-canvas, #f6f5f4);
+  color: #37352f;
+}
+/* pagination (firstpage/prevpage/rcpagejumper/nextpage/lastpage) */
+.pagenav a {
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  min-width: 26px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #615d59;
+}
+.pagenav a:not(.disabled):hover {
+  background: #f6f5f4;
+  color: #37352f;
+}
+.pagenav input.rcpagejumper {
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  height: 22px;
+  text-align: center;
+  background: #fff;
+}
+
+/* ---- 3d. compose (write window) ---- */
+#compose-content .formcontent {
+  background: #ffffff;
+}
+.compose-headers .form-group.row {
+  border-bottom: 1px solid #f0f0ef;
+  padding: 2px 10px;
+  transition: box-shadow .12s;
+}
+.compose-headers .form-group.row:focus-within {
+  box-shadow: inset 0 0 0 1.5px #0075de;
+  background: #fff;
+}
+.compose-headers label {
+  color: #a39e98;
+}
+.formbuttons button.send,
+.formbuttons .btn-primary {
+  border-radius: 9px !important;
+  box-shadow: 0 5px 14px -4px rgba(0, 117, 222, .5);
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+/* compose option toggles: ONLY inside compose containers, never list checkboxes */
+.formcontainer input[type="checkbox"],
+.popupmenu.compose-menu input[type="checkbox"],
+.formbuttons input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 17px;
+  border-radius: 9999px;
+  background: #dddddd;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background-color .15s ease;
+}
+.formcontainer input[type="checkbox"]::after,
+.popupmenu.compose-menu input[type="checkbox"]::after,
+.formbuttons input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  transition: transform .15s ease;
+}
+.formcontainer input[type="checkbox"]:checked,
+.popupmenu.compose-menu input[type="checkbox"]:checked,
+.formbuttons input[type="checkbox"]:checked {
+  background: #0075de;
+}
+.formcontainer input[type="checkbox"]:checked::after,
+.popupmenu.compose-menu input[type="checkbox"]:checked::after,
+.formbuttons input[type="checkbox"]:checked::after {
+  transform: translateX(13px);
+}
+/* keep list-selection checkboxes native */
+#messagelist input[type="checkbox"] {
+  -webkit-appearance: auto;
+  appearance: auto;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+}
+#messagelist input[type="checkbox"]::after {
+  content: none;
+}
+
+/* ---- 3e. popup menus (select▾ / mark▾ / more▾ …) ---- */
+.popupmenu .menu li a,
+.ui-menu .menu li a {
+  border-radius: 6px;
+  margin: 1px 4px;
+}
+.popupmenu .menu li a:hover,
+.ui-menu .menu li a:hover {
+  background: rgba(0, 117, 222, .08);
+  color: #0075de;
+}
+
+/* ---- 3f. settings two-level menu ---- */
+#settings-menu li a {
+  border-radius: 7px;
+  margin: 1px 6px;
+}
+#settings-menu li.selected > a {
+  background: rgba(0, 117, 222, .12);
+  color: #0075de;
+  box-shadow: inset 2.5px 0 0 #0075de;
+}
+
+/* ---- 3g. dark-mode counterparts for v3 ---- */
+html.dark-mode .toolbar a { color: #c9c9c9; }
+html.dark-mode .toolbar a:hover { background: rgba(255, 255, 255, .06) !important; color: #e6e6e6 !important; }
+html.dark-mode .toolbar a.selected { background: rgba(0, 117, 222, .25) !important; color: #7cbdf5 !important; }
+html.dark-mode .treelist li a { color: #c9c9c9; }
+html.dark-mode .treelist li a:hover { background: rgba(255, 255, 255, .06); }
+html.dark-mode .treelist li.selected > a,
+html.dark-mode .treelist li.selected > a:hover {
+  background: rgba(0, 117, 222, .25);
+  color: #7cbdf5;
+  box-shadow: inset 2.5px 0 0 #0075de;
+}
+html.dark-mode #layout-sidebar .header .header-title.username { color: #d4d4d4; }
+html.dark-mode #layout-list .header ul.menu.toolbar a,
+html.dark-mode #layout-list .header .toolbar-buttons a { color: #9b9b9b; }
+html.dark-mode #layout-list .header ul.menu.toolbar a:hover,
+html.dark-mode #layout-list .header .toolbar-buttons a:hover { background: #252525; color: #e6e6e6; }
+html.dark-mode .pagenav a { border-color: #2f2f2f; color: #9b9b9b; background: #1e1e1e; }
+html.dark-mode .pagenav input.rcpagejumper { background: #252525; border-color: #2f2f2f; color: #d4d4d4; }
+html.dark-mode #compose-content .formcontent { background: #1e1e1e; }
+html.dark-mode .compose-headers .form-group.row { border-bottom-color: #2f2f2f; }
+html.dark-mode .compose-headers .form-group.row:focus-within { background: #252525; }
+html.dark-mode .compose-headers label { color: #6f6f6f; }
+html.dark-mode .formcontainer input[type="checkbox"],
+html.dark-mode .popupmenu.compose-menu input[type="checkbox"],
+html.dark-mode .formbuttons input[type="checkbox"] { background: #2f2f2f; }
+html.dark-mode .popupmenu .menu li a:hover,
+html.dark-mode .ui-menu .menu li a:hover { background: rgba(255, 255, 255, .06); color: #7cbdf5; }
+html.dark-mode #settings-menu li.selected > a {
+  background: rgba(0, 117, 222, .25);
+  color: #7cbdf5;
+}
