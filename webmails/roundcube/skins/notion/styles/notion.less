@@ -308,6 +308,58 @@ html:not(.dark-mode) {
             }
         }
 
+        /* ============ toolbar (compose and message view) ============
+           elastic renders the toolbar as #toolbar-menu below the large
+           breakpoint, #messagetoolbar/#mailtoolbar otherwise. The rules
+           must not be scoped to one task. */
+
+        #toolbar-menu,
+        #messagetoolbar,
+        #mailtoolbar {
+            li {
+                // inline-block items align on the text baseline, so buttons
+                // with different content heights end up on different lines;
+                // flex centers them all on one row
+                display: inline-flex;
+                align-items: center;
+                height: auto !important;
+            }
+
+            a {
+                line-height: 1.5;
+                padding: 6px 9px;
+                border-radius: 6px;
+                font-size: 12px;
+                color: @color-notion-muted;
+
+                &:not(.disabled):hover {
+                    background: @color-notion-canvas;
+                    color: @color-notion-ink2;
+                }
+            }
+
+            // drop buttons (e.g. 回复全部 ▾) hold two links; the elastic
+            // dropdown arrow is smaller and baseline-aligned, so it hangs
+            // off the row. Flex the group and give the arrow the same
+            // button metrics.
+            .dropbutton {
+                display: inline-flex;
+                align-items: center;
+
+                a.dropdown {
+                    font-size: 12px;
+                    min-width: 0;
+                    padding: 6px 9px;
+                }
+            }
+
+            // the options sidebar is always visible on desktop, so this
+            // toggle button is redundant (compose only)
+            a.options {
+                display: none !important;
+            }
+        }
+
         /* ============ compose ============ */
 
         body.task-mail.action-compose {
@@ -405,54 +457,6 @@ html:not(.dark-mode) {
             }
 
             #compose-content {
-                // the responsive toolbar (elastic renders it as #toolbar-menu
-                // below the large breakpoint, #messagetoolbar otherwise)
-                #toolbar-menu,
-                #messagetoolbar {
-                    li {
-                        // inline-block items align on the text baseline, so
-                        // buttons with different content heights end up on
-                        // different lines; flex centers them all on one row
-                        display: inline-flex;
-                        align-items: center;
-                        height: auto !important;
-                    }
-
-                    a {
-                        line-height: 1.5;
-                        padding: 6px 9px;
-                        border-radius: 6px;
-                        font-size: 12px;
-                        color: @color-notion-muted;
-
-                        &:not(.disabled):hover {
-                            background: @color-notion-canvas;
-                            color: @color-notion-ink2;
-                        }
-                    }
-
-                    // drop buttons (e.g. 拼写 ▾) hold two links; the elastic
-                    // dropdown arrow is smaller and baseline-aligned, so it
-                    // hangs off the row. Flex the group and give the arrow
-                    // the same button metrics.
-                    .dropbutton {
-                        display: inline-flex;
-                        align-items: center;
-
-                        a.dropdown {
-                            font-size: 12px;
-                            min-width: 0;
-                            padding: 6px 9px;
-                        }
-                    }
-
-                    // the options sidebar is always visible on desktop, so
-                    // this toggle button is redundant
-                    a.options {
-                        display: none !important;
-                    }
-                }
-
                 .compose-headers {
                     padding: 0 16px;
 

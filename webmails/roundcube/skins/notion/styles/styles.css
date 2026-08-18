@@ -5399,6 +5399,10 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) {
     /* ============ left rail ============ */
     /* ============ list pane ============ */
+    /* ============ toolbar (compose and message view) ============
+           elastic renders the toolbar as #toolbar-menu below the large
+           breakpoint, #messagetoolbar/#mailtoolbar otherwise. The rules
+           must not be scoped to one task. */
     /* ============ compose ============ */
   }
   html:not(.dark-mode) #layout-menu {
@@ -5645,6 +5649,46 @@ html:not(.dark-mode) body {
     background: #f6f5f4;
     color: #31302e;
   }
+  html:not(.dark-mode) #toolbar-menu li,
+  html:not(.dark-mode) #messagetoolbar li,
+  html:not(.dark-mode) #mailtoolbar li {
+    display: inline-flex;
+    align-items: center;
+    height: auto !important;
+  }
+  html:not(.dark-mode) #toolbar-menu a,
+  html:not(.dark-mode) #messagetoolbar a,
+  html:not(.dark-mode) #mailtoolbar a {
+    line-height: 1.5;
+    padding: 6px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #615d59;
+  }
+  html:not(.dark-mode) #toolbar-menu a:not(.disabled):hover,
+  html:not(.dark-mode) #messagetoolbar a:not(.disabled):hover,
+  html:not(.dark-mode) #mailtoolbar a:not(.disabled):hover {
+    background: #f6f5f4;
+    color: #31302e;
+  }
+  html:not(.dark-mode) #toolbar-menu .dropbutton,
+  html:not(.dark-mode) #messagetoolbar .dropbutton,
+  html:not(.dark-mode) #mailtoolbar .dropbutton {
+    display: inline-flex;
+    align-items: center;
+  }
+  html:not(.dark-mode) #toolbar-menu .dropbutton a.dropdown,
+  html:not(.dark-mode) #messagetoolbar .dropbutton a.dropdown,
+  html:not(.dark-mode) #mailtoolbar .dropbutton a.dropdown {
+    font-size: 12px;
+    min-width: 0;
+    padding: 6px 9px;
+  }
+  html:not(.dark-mode) #toolbar-menu a.options,
+  html:not(.dark-mode) #messagetoolbar a.options,
+  html:not(.dark-mode) #mailtoolbar a.options {
+    display: none !important;
+  }
   html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right {
     flex: 0 0 290px;
     max-width: 290px;
@@ -5722,40 +5766,6 @@ html:not(.dark-mode) body {
     border-radius: 6px;
     font-size: 12.5px;
     padding: 0 8px;
-  }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu li,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar li {
-    display: inline-flex;
-    align-items: center;
-    height: auto !important;
-  }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar a {
-    line-height: 1.5;
-    padding: 6px 9px;
-    border-radius: 6px;
-    font-size: 12px;
-    color: #615d59;
-  }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a:not(.disabled):hover,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar a:not(.disabled):hover {
-    background: #f6f5f4;
-    color: #31302e;
-  }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu .dropbutton,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar .dropbutton {
-    display: inline-flex;
-    align-items: center;
-  }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu .dropbutton a.dropdown,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar .dropbutton a.dropdown {
-    font-size: 12px;
-    min-width: 0;
-    padding: 6px 9px;
-  }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a.options,
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar a.options {
-    display: none !important;
   }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers {
     padding: 0 16px;
