@@ -61,8 +61,8 @@ $config['support_url'] = '../..{{ WEB_ADMIN }}';
 {%- endif %}
 $config['plugins'] = array({{ PLUGINS }});
 
-// skin name: folder from skins/
-$config['skin'] = 'elastic';
+// skin name: folder from skins/ (custom Notion skin, see roundcube/skins/notion)
+$config['skin'] = 'notion';
 
 // configure mailu sso plugin
 $config['sso_logout_url'] = '/sso/logout';

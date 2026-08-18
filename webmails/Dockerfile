@@ -58,6 +58,10 @@ COPY roundcube/templates-override/includes/menu.html /var/www/roundcube/skins/el
 COPY roundcube/templates-override/addressbook.html /var/www/roundcube/skins/elastic/templates/addressbook.html
 COPY roundcube/templates-override/settings.html /var/www/roundcube/skins/elastic/templates/settings.html
 
+# notion theme: custom skin (elastic 1.6.18 sources re-styled to the
+# Notion palette + widened rail; compiled styles.css ships as-is)
+COPY roundcube/skins/notion/ /var/www/roundcube/skins/notion/
+
 # notion theme: self-hosted fonts + override css appended to the
 # elastic skin styles (re-run this block when bumping ROUNDCUBE_URL)
 COPY roundcube/notion-override.css /tmp/notion-override.css

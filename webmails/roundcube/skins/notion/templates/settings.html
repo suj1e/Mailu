@@ -1,0 +1,46 @@
+<roundcube:include file="includes/layout.html" />
+<roundcube:include file="includes/menu.html" />
+<roundcube:include file="includes/settings-menu.html" />
+
+<h1 class="voice"><roundcube:label name="preferences" /></h1>
+
+<!-- notion: unified rail - mailbox sidebar on the settings task too -->
+<div id="layout-sidebar" class="listbox" role="navigation" aria-labelledby="aria-label-folderlist">
+	<div class="header">
+		<span class="header-title username"><roundcube:object name="username" /></span>
+	</div>
+	<div class="scroller">
+		<div class="sidebar-account"><roundcube:object name="username" /></div>
+		<div class="menu-section menu-section-folders"><span>邮箱</span></div>
+		<ul class="treelist listing folderlist notion-staticfolders">
+			<li class="mailbox inbox"><a href="./?_task=mail&amp;_mbox=INBOX"><roundcube:label name="inbox" /></a></li>
+			<li class="mailbox drafts"><a href="./?_task=mail&amp;_mbox=Drafts"><roundcube:label name="drafts" /></a></li>
+			<li class="mailbox sent"><a href="./?_task=mail&amp;_mbox=Sent"><roundcube:label name="sent" /></a></li>
+			<li class="mailbox junk"><a href="./?_task=mail&amp;_mbox=Junk"><roundcube:label name="junk" /></a></li>
+			<li class="mailbox trash"><a href="./?_task=mail&amp;_mbox=Trash"><roundcube:label name="trash" /></a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="layout-list" class="listbox<roundcube:exp expression="!request:_action ? '' : ' selected'"/>" aria-labelledby="aria-label-prefsection">
+	<div class="header">
+		<a class="button icon back-sidebar-button" href="#sidebar"><span class="inner"><roundcube:label name="settings" /></span></a>
+		<span id="aria-label-prefsection" class="header-title"><roundcube:label name="preferences" /></span>
+	</div>
+	<div class="scroller">
+		<roundcube:object name="sectionslist" id="sections-table" class="listing iconized settings-default-icon"
+			noheader="true" role="listbox" data-list="sections_list" />
+	</div>
+</div>
+
+<div id="layout-content" role="main">
+	<div class="header">
+		<a class="button icon back-list-button" href="#back"><span class="inner"><roundcube:label name="back" /></span></a>
+		<span class="header-title"></span>
+	</div>
+	<div class="iframe-wrapper">
+		<roundcube:object name="contentframe" id="preferences-frame" src="env:blankpage" title="arialabelpreferencesform" />
+	</div>
+</div>
+
+<roundcube:include file="includes/footer.html" />
