@@ -48,6 +48,16 @@
     tr.selected td {
         color: @color-list-selected;
         background-color: @color-list-selected-background;
+        box-shadow: inset 3px 0 0 @color-main;
+    }
+
+    tr.unread td.subject span.fromto {
+        font-weight: 700;
+        color: @color-font;
+    }
+    tr.unread td.subject span.subject {
+        color: @color-font;
+        font-weight: 600;
     }
 
     td.selection {
@@ -646,6 +656,22 @@ table.fixedcopy {
 
     tr.unread td.subject span.subject {
         font-weight: bold;
+        color: @color-font;
+    }
+    tr.unread td.subject span.fromto {
+        font-weight: 700;
+        color: @color-font;
+    }
+    /* unread blue dot before subject (prototype look) */
+    tr.unread td.subject span.subject::before {
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: @color-main;
+        margin-right: .45rem;
+        vertical-align: 1px;
     }
 
     // thread parent message with unread children

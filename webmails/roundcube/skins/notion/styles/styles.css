@@ -2564,8 +2564,11 @@ a.toolbar-button {
 }
 /*** Taskmenu ***/
 #taskmenu a {
-  display: block;
+  display: flex;
   float: none;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: left;
 }
 @media screen and (max-width: 480px) {
   #taskmenu {
@@ -2910,6 +2913,15 @@ a.toolbar-button {
 .listing tr.selected td {
   color: #2c363a;
   background-color: #e6f1fc;
+  box-shadow: inset 3px 0 0 #0075de;
+}
+.listing tr.unread td.subject span.fromto {
+  font-weight: 700;
+  color: #2c363a;
+}
+.listing tr.unread td.subject span.subject {
+  color: #2c363a;
+  font-weight: 600;
 }
 .listing td.selection {
   padding: 0 0 0 0.5em;
@@ -3338,6 +3350,9 @@ html.touch .folderlist li.mailbox .unreadcount {
 table.fixedcopy {
   display: none;
 }
+.messagelist {
+  /* unread blue dot before subject (prototype look) */
+}
 .messagelist td {
   border-left: 0;
   width: 2em;
@@ -3406,6 +3421,21 @@ table.fixedcopy {
 }
 .messagelist tr.unread td.subject span.subject {
   font-weight: bold;
+  color: #2c363a;
+}
+.messagelist tr.unread td.subject span.fromto {
+  font-weight: 700;
+  color: #2c363a;
+}
+.messagelist tr.unread td.subject span.subject::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0075de;
+  margin-right: 0.45rem;
+  vertical-align: 1px;
 }
 .messagelist tr.unroot td.subject a {
   text-decoration: underline;
