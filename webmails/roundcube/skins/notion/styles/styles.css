@@ -5742,6 +5742,17 @@ html:not(.dark-mode) body {
     background: #f6f5f4;
     color: #31302e;
   }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu .dropbutton,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar .dropbutton {
+    display: inline-flex;
+    align-items: center;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu .dropbutton a.dropdown,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar .dropbutton a.dropdown {
+    font-size: 12px;
+    min-width: 0;
+    padding: 6px 9px;
+  }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content #toolbar-menu a.options,
   html:not(.dark-mode) body.task-mail.action-compose #compose-content #messagetoolbar a.options {
     display: none !important;

@@ -431,6 +431,21 @@ html:not(.dark-mode) {
                         }
                     }
 
+                    // drop buttons (e.g. 拼写 ▾) hold two links; the elastic
+                    // dropdown arrow is smaller and baseline-aligned, so it
+                    // hangs off the row. Flex the group and give the arrow
+                    // the same button metrics.
+                    .dropbutton {
+                        display: inline-flex;
+                        align-items: center;
+
+                        a.dropdown {
+                            font-size: 12px;
+                            min-width: 0;
+                            padding: 6px 9px;
+                        }
+                    }
+
                     // the options sidebar is always visible on desktop, so
                     // this toggle button is redundant
                     a.options {
