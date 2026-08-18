@@ -5495,6 +5495,8 @@ html:not(.dark-mode) body {
     padding-right: 12px;
   }
   html:not(.dark-mode) #taskmenu .menu-section-row .menu-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 0;
   }
   html:not(.dark-mode) #taskmenu .menu-section-row .menu-folders-actions {
