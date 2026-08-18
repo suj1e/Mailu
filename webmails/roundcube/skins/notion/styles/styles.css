@@ -5858,9 +5858,6 @@ html:not(.dark-mode) body {
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-group.row:last-child {
     border-bottom: 0;
   }
-  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-group.row:focus-within {
-    box-shadow: inset 0 0 0 1.5px #0075de;
-  }
   html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers label.col-form-label {
     width: 58px;
     max-width: 58px;
