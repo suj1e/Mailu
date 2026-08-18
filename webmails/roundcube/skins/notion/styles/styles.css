@@ -5406,12 +5406,12 @@ html:not(.dark-mode) {
     display: none !important;
   }
   html:not(.dark-mode) #layout-menu .menu-me {
+    height: 53px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem 0.6rem 0.8rem;
-    margin-bottom: 0.6rem;
+    padding: 0 0.6rem;
+    margin-bottom: 0;
     border-bottom: 1px solid #e6e6e6;
     flex-shrink: 0;
   }
