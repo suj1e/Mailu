@@ -324,12 +324,12 @@ html.iframe #layout-content {
 }
 #layout-menu .popover-header img {
   max-height: 64px;
-  max-width: 147px;
+  max-width: 161px;
   padding: 0.25rem;
 }
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   #layout-menu .popover-header img {
-    max-width: 66.15px;
+    max-width: 72.45px;
   }
 }
 @media screen and (min-width: 481px) {
@@ -459,7 +459,7 @@ html.layout-phone #layout-menu .popover-header a .inner {
 }
 @media screen and (min-width: 1025px) {
   #layout-menu {
-    width: 147px;
+    width: 161px;
   }
 }
 @media screen and (min-width: 1201px) {
@@ -2650,7 +2650,7 @@ a.toolbar-button {
 }
 @media screen and (min-width: 1025px) {
   #taskmenu a {
-    width: 147px;
+    width: 161px;
     font-size: 1rem;
   }
   #taskmenu a:before {
@@ -5408,9 +5408,9 @@ html:not(.dark-mode) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.5rem 0.5rem 0.75rem;
-    margin-bottom: 0.5rem;
+    gap: 0.4rem;
+    padding: 0.6rem 0.6rem 0.9rem;
+    margin-bottom: 0.6rem;
     border-bottom: 1px solid #e6e6e6;
     flex-shrink: 0;
   }
@@ -5447,12 +5447,12 @@ html:not(.dark-mode) {
     min-width: 0;
     max-width: none;
     height: auto;
-    margin: 0 8px;
-    padding: 7px 9px;
+    margin: 0 10px;
+    padding: 8px 10px;
     border-radius: 7px;
     font-size: 12.5px;
-    line-height: 1.4;
-    gap: 8px;
+    line-height: 1.5;
+    gap: 9px;
     text-align: left;
   }
   html:not(.dark-mode) #taskmenu a:before {
@@ -5467,7 +5467,7 @@ html:not(.dark-mode) {
     font-weight: 600;
   }
   html:not(.dark-mode) #taskmenu .action-buttons {
-    margin: 4px 8px 8px;
+    margin: 6px 10px 10px;
   }
   html:not(.dark-mode) #taskmenu .action-buttons a {
     justify-content: center;
@@ -5491,14 +5491,14 @@ html:not(.dark-mode) {
     color: #a39e98;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    padding: 12px 17px 4px;
+    padding: 14px 19px 5px;
     text-align: left;
   }
   html:not(.dark-mode) #taskmenu .menu-section-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 10px;
+    padding-right: 12px;
   }
   html:not(.dark-mode) #taskmenu .menu-section-row .menu-section {
     padding-right: 0;
@@ -5526,7 +5526,7 @@ html:not(.dark-mode) {
     position: sticky;
     bottom: 0;
     margin-top: auto;
-    padding-top: 6px;
+    padding: 8px 0 10px;
     border-top: 1px solid #e6e6e6;
   }
   html:not(.dark-mode) #taskmenu .folderlist {
@@ -5538,15 +5538,15 @@ html:not(.dark-mode) {
     height: auto;
   }
   html:not(.dark-mode) #taskmenu .folderlist li > a {
-    padding: 7px 9px !important;
+    padding: 8px 10px !important;
     font-size: 12.5px;
-    line-height: 1.4;
+    line-height: 1.5;
     border-radius: 7px;
-    margin: 0 8px;
+    margin: 0 10px;
     width: auto;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
   }
   html:not(.dark-mode) #taskmenu .folderlist li a:before {
     font-size: 14px;
@@ -6326,7 +6326,7 @@ html.dark-mode #taskmenu .action-buttons a {
 }
 @media screen and (min-width: 1025px) {
   html.dark-mode #taskmenu a {
-    width: 146px;
+    width: 160px;
   }
 }
 html.dark-mode.layout-small .popover,
