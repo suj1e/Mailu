@@ -31,7 +31,13 @@
           </div>
         </div>
 
-        <div class="sso-hero-foot">合肥哈工艾斯德康智能科技有限公司</div>
+        <div class="sso-hero-foot">
+          {%- if config["WEBSITE"] and config["WEBSITE"] != "https://mailu.io" %}
+          <a href="{{ config["WEBSITE"] }}" target="_blank" rel="noreferrer">{{ config["SITENAME"] }} 官网</a>
+          {%- else %}
+          © 2026 {{ config["SITENAME"] }}
+          {%- endif %}
+        </div>
       </div>
 
       {#- 右:登录/内容区 -#}
@@ -40,7 +46,7 @@
           {{ utils.flashed_messages(container=False, default_category='success') }}
         </div>
         {%- block content %}{%- endblock %}
-        <div class="sso-panel-foot">© 2026 {{ config["SITENAME"] }} · 内部系统</div>
+        <div class="sso-panel-foot">© 2026 {{ config["SITENAME"] }} · <a href="https://github.com/Mailu/Mailu" target="_blank" rel="noreferrer">Powered by Mailu</a></div>
       </div>
 
     </div>
