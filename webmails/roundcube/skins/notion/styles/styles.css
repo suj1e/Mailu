@@ -5398,6 +5398,7 @@ html:not(.dark-mode) {
     /* ============ compose ============ */
   }
   html:not(.dark-mode) #layout-menu {
+    width: 175px;
     display: flex;
     flex-direction: column;
   }
