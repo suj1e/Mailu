@@ -2620,8 +2620,8 @@ a.toolbar-button {
     background-color: #f6f5f4;
   }
   #taskmenu .action-buttons a {
-    color: #0075de;
-    background: transparent;
+    color: #ffffff;
+    background: #0075de;
   }
   #taskmenu .action-buttons a:hover {
     color: #005bab;
