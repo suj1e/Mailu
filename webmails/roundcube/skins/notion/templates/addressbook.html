@@ -11,19 +11,10 @@
 		<roundcube:button name="groupoptions" type="link" title="arialabelabookgroupoptions" label="actions"
 			class="button icon sidebar-menu" innerClass="inner" data-popup="groupoptions-menu" />
 	</div>
-	<div class="scroller">
-		<!-- notion: unified rail - static mailbox links on non-mail tasks -->
-		<div class="sidebar-account"><roundcube:object name="username" /></div>
-		<div class="menu-section menu-section-folders"><span>邮箱</span></div>
-		<ul class="treelist listing folderlist notion-staticfolders">
-			<li class="mailbox inbox"><a href="./?_task=mail&amp;_mbox=INBOX"><roundcube:label name="inbox" /></a></li>
-			<li class="mailbox drafts"><a href="./?_task=mail&amp;_mbox=Drafts"><roundcube:label name="drafts" /></a></li>
-			<li class="mailbox sent"><a href="./?_task=mail&amp;_mbox=Sent"><roundcube:label name="sent" /></a></li>
-			<li class="mailbox junk"><a href="./?_task=mail&amp;_mbox=Junk"><roundcube:label name="junk" /></a></li>
-			<li class="mailbox trash"><a href="./?_task=mail&amp;_mbox=Trash"><roundcube:label name="trash" /></a></li>
-		</ul>
-		<div class="menu-section menu-section-groups"><span><roundcube:label name="groups" /></span></div>
-		<roundcube:object name="directorylist" id="directorylist" class="treelist listing iconized" />
+		<div class="scroller">
+			<!-- notion: the rail (includes/menu.html) renders the mailbox links on every task -->
+			<div class="menu-section menu-section-groups"><span><roundcube:label name="groups" /></span></div>
+			<roundcube:object name="directorylist" id="directorylist" class="treelist listing iconized" />
 		<h3 class="voice"><roundcube:label name="savedsearches" /></h3>
 		<roundcube:object name="savedsearchlist" id="savedsearchlist" class="treelist listing iconized" />
 	</div>

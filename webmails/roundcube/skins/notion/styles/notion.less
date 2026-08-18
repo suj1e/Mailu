@@ -1,0 +1,525 @@
+/**
+ * Notion skin - prototype overrides
+ *
+ * All rules here restyle the elastic widgets toward the v2 design
+ * prototype (rail with avatar/folders/account groups, compact lists,
+ * rounded search field, ...). Scoped to light mode and to the desktop
+ * layout (>= 1024px) where the prototype applies.
+ */
+
+html:not(.dark-mode) {
+    @media screen and (min-width: (@screen-width-medium + 1px)) {
+        /* ============ left rail ============ */
+
+        #layout-menu {
+            display: flex;
+            flex-direction: column;
+
+            .popover-header {
+                display: none !important;
+            }
+
+            // account block: avatar + email
+            .menu-me {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: .35rem;
+                padding: .5rem .5rem .75rem;
+                margin-bottom: .5rem;
+                border-bottom: 1px solid @color-layout-border;
+                flex-shrink: 0;
+
+                .me-avatar {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background: @color-main;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.05rem;
+
+                    &:before {
+                        &:extend(.font-icon-class);
+                        content: @fa-var-user;
+                    }
+                }
+
+                .me-email {
+                    font-size: 11px;
+                    color: @color-notion-muted;
+                    text-align: center;
+                    line-height: 1.3;
+                    word-break: break-all;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        #taskmenu {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                width: auto;
+                min-width: 0;
+                max-width: none;
+                height: auto;
+                margin: 0 8px;
+                padding: 7px 9px;
+                border-radius: 7px;
+                font-size: 12.5px;
+                line-height: 1.4;
+                gap: 8px;
+                text-align: left;
+
+                &:before {
+                    height: 15px !important;
+                    width: 15px !important;
+                    font-size: 14px !important;
+                    line-height: 15px !important;
+                    margin: 0 !important;
+                    float: none !important;
+                }
+
+                &.selected {
+                    font-weight: 600;
+                }
+            }
+
+            // compose button: solid blue, full width
+            .action-buttons {
+                margin: 4px 8px 8px;
+
+                a {
+                    justify-content: center;
+                    height: 34px;
+                    padding: 0;
+                    border-radius: 8px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    box-shadow: 0 4px 10px -3px rgba(0, 117, 222, .45);
+                    width: auto;
+                    margin: 0;
+
+                    &:hover {
+                        background: @color-taskmenu-button-action-hover !important;
+                        color: #fff !important;
+                    }
+                }
+            }
+
+            // group captions: 邮箱 / 转到 / 账户
+            .menu-section {
+                flex-shrink: 0;
+                font-size: 10.5px;
+                font-weight: 700;
+                color: @color-notion-faint;
+                letter-spacing: .07em;
+                text-transform: uppercase;
+                padding: 12px 17px 4px;
+                text-align: left;
+            }
+
+            .menu-section-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-right: 10px;
+
+                .menu-section {
+                    padding-right: 0;
+                }
+
+                // folder actions trigger (mailbox options menu)
+                .menu-folders-actions {
+                    width: 24px;
+                    height: 24px;
+                    min-width: 0;
+                    margin: 0;
+                    padding: 0;
+                    border-radius: 5px;
+                    color: @color-notion-faint;
+                    font-size: 0;
+
+                    &:before {
+                        font-size: 14px !important;
+                        line-height: 24px !important;
+                        height: 24px !important;
+                    }
+
+                    &:hover {
+                        background: rgba(0, 0, 0, .05);
+                        color: @color-notion-ink2;
+                    }
+                }
+            }
+
+            // account group pinned to the bottom of the rail
+            .special-buttons {
+                position: sticky;
+                bottom: 0;
+                margin-top: auto;
+                padding-top: 6px;
+                border-top: 1px solid @color-layout-border;
+            }
+
+            // folders inside the rail (real mailboxlist on mail task,
+            // static links elsewhere)
+            .folderlist {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    & > a {
+                        padding: 7px 9px !important;
+                        font-size: 12.5px;
+                        line-height: 1.4;
+                        border-radius: 7px;
+                        margin: 0 8px;
+                        width: auto;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+
+                    a:before {
+                        font-size: 14px;
+                        width: 15px;
+                        margin: 0;
+                    }
+
+                    &.unread > a {
+                        font-weight: 700;
+                        padding-right: 2.2em !important;
+                    }
+
+                    &.selected > a,
+                    &.selected > a:hover {
+                        background: @color-taskmenu-button-selected-background;
+                        color: @color-taskmenu-button-selected;
+                        font-weight: 600;
+                    }
+
+                    &:not(.selected):hover > a {
+                        background: @color-taskmenu-button-background-hover;
+                    }
+
+                    .unreadcount {
+                        min-width: 19px;
+                        height: 17px;
+                        line-height: 17px;
+                        border-radius: 9px;
+                        font-size: 10px;
+                        padding: 0 5px;
+                        margin: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+
+        /* ============ list pane ============ */
+
+        .searchbar {
+            margin: 8px 12px;
+            height: 30px;
+            min-height: 30px;
+            line-height: 30px;
+            background: @color-notion-canvas;
+            border: 1px solid @color-notion-line;
+            border-radius: 7px;
+
+            form:before {
+                height: 30px;
+                line-height: 30px;
+                margin-left: 10px;
+                font-size: 13px;
+                color: @color-notion-faint;
+            }
+
+            input {
+                font-size: 12.5px;
+            }
+
+            a.options {
+                width: 28px;
+                font-size: 0;
+
+                &:before {
+                    font-size: 13px;
+                    width: 28px;
+                }
+            }
+        }
+
+        #layout-list > .header,
+        #layout-content > .header {
+            height: auto;
+            min-height: 42px;
+            line-height: normal;
+            padding: 4px 8px;
+            border-bottom: 1px solid @color-notion-line;
+
+            .menu.toolbar li {
+                height: auto;
+            }
+
+            .menu.toolbar a,
+            a.toolbar-button {
+                height: auto;
+                min-width: 0;
+                max-width: none;
+                padding: 6px 9px;
+                border-radius: 6px;
+                font-size: 12px;
+                line-height: 1.4;
+                color: @color-notion-muted;
+
+                &:before {
+                    height: 15px !important;
+                    line-height: 15px;
+                    font-size: 13px;
+                }
+
+                &:not(.disabled):hover {
+                    background: @color-notion-canvas;
+                    color: @color-notion-ink2;
+                }
+            }
+        }
+
+        /* ============ message view ============ */
+
+        #message-header {
+            margin-bottom: .75rem;
+
+            & > .subject {
+                font-size: 18px;
+                font-weight: 700;
+                letter-spacing: -.3px;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .header-summary {
+                font-size: 12.5px;
+                color: @color-notion-muted;
+            }
+
+            .header-links a {
+                color: @color-main;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #message-content .attachmentslist {
+            background: @color-notion-canvas;
+            border: 1px solid @color-notion-line;
+            border-radius: 8px;
+            padding: 2px 12px;
+            width: fit-content;
+        }
+
+        /* ============ compose ============ */
+
+        body.task-mail.action-compose {
+            #layout-sidebar.sidebar-right {
+                flex: 0 0 290px;
+                max-width: 290px;
+                background: @color-notion-canvas;
+
+                .header {
+                    height: auto;
+                    min-height: 48px;
+                    line-height: normal;
+                    padding: 14px 18px 10px;
+                    border-bottom: 0;
+                    background: transparent;
+
+                    .header-title {
+                        font-size: 13px;
+                        font-weight: 700;
+                        color: @color-notion-ink;
+                    }
+                }
+
+                .scroller {
+                    padding: 0 12px 12px;
+                }
+
+                #compose-attachments {
+                    margin: 0 0 12px;
+                    background: @color-notion-surface;
+                    border: 1px solid @color-notion-line;
+                    border-radius: 10px;
+                    padding: 14px;
+
+                    .upload-form {
+                        .btn.attach {
+                            width: 100%;
+                            height: 34px;
+                            border-radius: 8px;
+                            background: @color-main;
+                            color: #fff;
+                            font-size: 12.5px;
+                            font-weight: 500;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 6px;
+                            border: 0;
+
+                            &:hover {
+                                background: @color-taskmenu-button-action-hover;
+                            }
+                        }
+                    }
+                }
+
+                #compose-options {
+                    background: @color-notion-surface;
+                    border: 1px solid @color-notion-line;
+                    border-radius: 10px;
+                    padding: 10px 14px;
+                    margin: 0;
+
+                    .form-group.row {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 7px 0;
+                        margin: 0;
+                        border-bottom: 1px solid #f0f0ef;
+
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                    }
+
+                    .col-form-label {
+                        font-size: 12.5px;
+                        color: @color-notion-ink2;
+                        padding: 0;
+                    }
+
+                    .form-check-input {
+                        margin: 0;
+                    }
+
+                    .custom-select {
+                        height: 32px;
+                        border: 1px solid @color-notion-bd;
+                        border-radius: 6px;
+                        font-size: 12.5px;
+                        padding: 0 8px;
+                    }
+                }
+            }
+
+            #compose-content {
+                .compose-headers {
+                    padding: 0 16px;
+
+                    .form-group.row {
+                        min-height: 46px;
+                        align-items: center;
+                        margin: 0;
+                        border-bottom: 1px solid #f0f0ef;
+
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+
+                        &:focus-within {
+                            box-shadow: inset 0 0 0 1.5px @color-main;
+                        }
+                    }
+
+                    label.col-form-label {
+                        width: 58px;
+                        max-width: 58px;
+                        color: @color-notion-faint;
+                        font-size: 13px;
+                        padding: 0;
+                    }
+
+                    .form-control,
+                    .tagedit-list,
+                    input {
+                        border: 0;
+                        box-shadow: none;
+                        background: transparent;
+                        font-size: 14px;
+                        padding: 10px 0;
+                    }
+
+                    .input-group-text.icon {
+                        background: transparent;
+                        border: 0;
+                        color: @color-notion-faint;
+
+                        &:hover {
+                            color: @color-notion-ink;
+                        }
+                    }
+                }
+
+                .formbuttons {
+                    padding: 12px 16px;
+                    border-top: 1px solid @color-notion-line;
+
+                    .btn-primary.send {
+                        height: 40px;
+                        padding: 0 24px;
+                        border-radius: 9px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        box-shadow: 0 5px 14px -4px rgba(0, 117, 222, .5);
+                        border: 0;
+
+                        &:hover {
+                            background: @color-taskmenu-button-action-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ============ mail task: folders live in the rail ============ */
+
+    body.task-mail:not(.action-compose) {
+        #layout-sidebar {
+            display: none !important;
+        }
+
+        #layout-list {
+            flex: 4.5;
+            max-width: 46%;
+        }
+
+        #layout-content {
+            flex: 6;
+        }
+
+        // the folder pane toggle is useless without the pane; folders are
+        // always reachable from the rail menu
+        #layout-list > .header .back-sidebar-button {
+            display: none !important;
+        }
+    }
+
+    body.task-mail.action-compose .menu-folders-actions {
+        // no mailbox options popup on the compose page
+        display: none !important;
+    }
+}

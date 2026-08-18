@@ -25,8 +25,20 @@
 @color-black-shade-bg:      lighten(@color-black, 85%);
 
 
+// Notion palette (design prototype)
+@color-notion-canvas:   #f6f5f4;
+@color-notion-surface:  #ffffff;
+@color-notion-ink:      #37352f;
+@color-notion-ink2:     #31302e;
+@color-notion-muted:    #615d59;
+@color-notion-faint:    #a39e98;
+@color-notion-line:     #e6e6e6;
+@color-notion-bd:       #ddd;
+@color-notion-primary:  #0075de;
+
+
 // Layout elements
-@color-layout-border:               @color-black-shade-border;
+@color-layout-border:               @color-notion-line;
 @color-layout-header:               @color-font;
 @color-layout-sidebar-background:   #f6f5f4;
 @color-layout-list-background:      #ffffff;
@@ -70,14 +82,14 @@
 // Listings
 @color-list:                        @color-font;
 @color-list-selected:               @color-font;
-@color-list-selected-background:    tint(@color-main, 90%);
+@color-list-selected-background:    rgba(0,117,222,.05);
 @color-list-flagged:                @color-error;
 @color-list-deleted:                fadeout(@color-font, 50%);
 @color-list-secondary:              @color-black-shade-text;
 @color-list-droptarget-background:  #ffffcc;
 @color-list-focus-indicator:        lighten(@color-main, 20%);
 
-@color-list-border:                 @color-black-shade-bg;
+@color-list-border:                 #f2f2f1;
 @color-list-badge:                  #fff;
 @color-list-badge-background:       @color-main;
 @color-list-recent:                 darken(@color-main, 20%);
@@ -86,7 +98,7 @@
 
 @color-list-pagenav:                @color-black-shade-text;
 @color-list-icon:                   fadeout(@color-list-secondary, 25%);
-@color-list-unread-status:          @color-warning;
+@color-list-unread-status:          #f3cc43;
 
 @color-attachmentlist-border:       #f4f4f4;
 @color-attachmentlist-background:   #fcfcfc;

@@ -227,7 +227,7 @@ html.iframe body {
   justify-content: center;
 }
 #layout > div > .header {
-  border-bottom: 1px solid #d4dbde;
+  border-bottom: 1px solid #e6e6e6;
   color: #2c363a;
   background-color: #f6f5f4;
 }
@@ -246,7 +246,7 @@ html.iframe body {
   order: 99;
 }
 #layout > div > .footer {
-  border-top: 1px solid #d4dbde;
+  border-top: 1px solid #e6e6e6;
   background-color: #f6f5f4;
 }
 #layout > div > .footer.small {
@@ -264,13 +264,13 @@ html.iframe body {
   flex: 2;
   max-width: 30%;
   min-width: 220px;
-  border-right: 1px solid #d4dbde;
+  border-right: 1px solid #e6e6e6;
   background-color: #f6f5f4;
 }
 #layout-sidebar.sidebar-right {
   order: 2;
   border-right: 0;
-  border-left: 1px solid #d4dbde;
+  border-left: 1px solid #e6e6e6;
   flex: 3;
 }
 #layout-list {
@@ -280,7 +280,7 @@ html.iframe body {
   flex: 3;
   max-width: 30%;
   min-width: 300px;
-  border-right: 1px solid #d4dbde;
+  border-right: 1px solid #e6e6e6;
   background-color: #ffffff;
 }
 #layout-content {
@@ -558,7 +558,7 @@ font.bold {
   flex: 1;
 }
 .popup .listbox .footer {
-  border-top: 1px solid #d4dbde;
+  border-top: 1px solid #e6e6e6;
   background-color: #ffffff;
 }
 .contact-header {
@@ -728,7 +728,7 @@ fieldset.image-attachment img {
   height: 0.5rem;
   margin: 0 1rem;
   background-color: #fff;
-  border: 1px solid #d4dbde;
+  border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
   overflow: hidden;
 }
@@ -821,7 +821,7 @@ fieldset.image-attachment img {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
-  border: 1px solid #d4dbde;
+  border: 1px solid #e6e6e6;
 }
 .table-widget > .content {
   overflow-x: auto;
@@ -833,7 +833,7 @@ fieldset.image-attachment img {
 }
 .table-widget > .footer {
   height: 3.5rem;
-  border-top: 1px solid #d4dbde;
+  border-top: 1px solid #e6e6e6;
   text-align: left;
 }
 .table-widget > .footer a {
@@ -856,10 +856,10 @@ fieldset.image-attachment img {
   text-align: left;
 }
 .table-widget table.options-table tr:last-child td {
-  border-bottom: 1px solid #d4dbde;
+  border-bottom: 1px solid #e6e6e6;
 }
 .table-widget table.options-table tr.selected td {
-  background-color: #e6f1fc;
+  background-color: rgba(0, 117, 222, 0.05);
   color: #2c363a;
   outline: 0;
 }
@@ -1312,7 +1312,7 @@ html.touch .btn:focus {
   z-index: 119;
 }
 .ui-widget {
-  border: 1px solid #d4dbde;
+  border: 1px solid #e6e6e6;
   box-shadow: 3px 3px 5px #f1f3f4;
   border-radius: 0.3rem;
 }
@@ -1607,7 +1607,7 @@ html.touch .btn:focus {
   position: initial;
 }
 .minicolors-panel {
-  border: 1px solid #d4dbde;
+  border: 1px solid #e6e6e6;
   box-shadow: 3px 3px 5px #f1f3f4;
   border-radius: 0.3rem;
   height: 152px;
@@ -1673,7 +1673,7 @@ html.touch .btn:focus {
 }
 .popover {
   box-shadow: 3px 3px 5px #f1f3f4;
-  border-color: #d4dbde;
+  border-color: #e6e6e6;
   padding: 0;
   z-index: 1300;
 }
@@ -1714,7 +1714,7 @@ html.layout-phone .popover:not(.select-menu) div.arrow {
 }
 html.layout-small .popover:not(.select-menu) .listing li:last-child,
 html.layout-phone .popover:not(.select-menu) .listing li:last-child {
-  border-bottom: 1px solid #f1f3f4;
+  border-bottom: 1px solid #f2f2f1;
 }
 html.layout-small .popover-overlay,
 html.layout-phone .popover-overlay {
@@ -1980,7 +1980,7 @@ html.layout-phone .menu.pagenav input {
 .menu.pagenav.pagenav-list {
   cursor: pointer;
   background-color: #ffffff;
-  border-bottom: 1px solid #f1f3f4;
+  border-bottom: 1px solid #f2f2f1;
 }
 .menu.pagenav.pagenav-list a {
   flex-grow: unset;
@@ -1993,7 +1993,7 @@ html.layout-phone .menu.pagenav input {
   background-color: #fbfbfb;
 }
 .menu.pagenav.pagenav-list.expanded + .navlist {
-  border-bottom: 1px solid #d4dbde;
+  border-bottom: 1px solid #e6e6e6;
 }
 .menu.content-frame-navigation.hide-nav-buttons a.next,
 .menu.content-frame-navigation.hide-nav-buttons a.prev {
@@ -2482,7 +2482,7 @@ a.toolbar-button {
   min-height: 36px;
   line-height: 36px;
   background-color: #ffffff;
-  border-bottom: 1px solid #f1f3f4;
+  border-bottom: 1px solid #f2f2f1;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -2582,7 +2582,7 @@ a.toolbar-button {
     text-align: left;
     line-height: 47px;
     height: 47px;
-    border-bottom: 1px solid #f1f3f4 !important;
+    border-bottom: 1px solid #f2f2f1 !important;
     color: #2c363a;
     font-size: 1.2rem;
   }
@@ -2883,7 +2883,7 @@ a.toolbar-button {
 /*** List and treelist widgets ***/
 .listing tbody td,
 .listing li {
-  border-bottom: 1px solid #f1f3f4;
+  border-bottom: 1px solid #f2f2f1;
   cursor: default;
   font-weight: normal;
   line-height: 44px;
@@ -2912,7 +2912,7 @@ a.toolbar-button {
 .listing li.selected,
 .listing tr.selected td {
   color: #2c363a;
-  background-color: #e6f1fc;
+  background-color: rgba(0, 117, 222, 0.05);
   box-shadow: inset 3px 0 0 #0075de;
 }
 .listing tr.unread td.subject span.fromto {
@@ -3005,7 +3005,7 @@ ul.listing li {
   list-style: none;
 }
 ul.listing li ul {
-  border-top: 1px solid #f1f3f4;
+  border-top: 1px solid #f2f2f1;
   padding-left: 1.5em;
 }
 ul.listing li ul li:last-child {
@@ -3223,7 +3223,7 @@ ul.treelist li.selected {
 ul.treelist li.selected > div > a,
 ul.treelist li.selected > a {
   color: #2c363a;
-  background-color: #e6f1fc;
+  background-color: rgba(0, 117, 222, 0.05);
 }
 ul.treelist li ul {
   padding: 0;
@@ -3350,9 +3350,6 @@ html.touch .folderlist li.mailbox .unreadcount {
 table.fixedcopy {
   display: none;
 }
-.messagelist {
-  /* unread blue dot before subject (prototype look) */
-}
 .messagelist td {
   border-left: 0;
   width: 2em;
@@ -3375,15 +3372,18 @@ table.fixedcopy {
 .messagelist td.subject span.size,
 .messagelist td.subject span.date {
   font-size: 90%;
-  color: #737677;
+  color: #a39e98;
+}
+.messagelist td.subject span.date {
+  font-size: 11px;
 }
 .messagelist td.subject span.fromto {
   overflow: hidden;
   text-overflow: ellipsis;
   flex: 1;
   font-size: 90%;
-  color: #737677;
-  padding-left: 1.5em;
+  color: #31302e;
+  padding-left: 0;
   padding-right: 0.5rem;
 }
 .messagelist td.subject span.subject {
@@ -3391,6 +3391,8 @@ table.fixedcopy {
   text-overflow: ellipsis;
   width: 100%;
   user-select: none;
+  font-size: 12.5px;
+  color: #615d59;
 }
 .messagelist td.threads {
   padding: 0 0 0 0.25rem;
@@ -3420,22 +3422,16 @@ table.fixedcopy {
   color: rgba(44, 54, 58, 0.5);
 }
 .messagelist tr.unread td.subject span.subject {
-  font-weight: bold;
-  color: #2c363a;
+  font-weight: 600;
+  color: #31302e;
 }
 .messagelist tr.unread td.subject span.fromto {
   font-weight: 700;
-  color: #2c363a;
+  color: #37352f;
 }
-.messagelist tr.unread td.subject span.subject::before {
-  content: '';
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #0075de;
-  margin-right: 0.45rem;
-  vertical-align: 1px;
+.messagelist tr.unread td.subject span.date {
+  color: #0075de;
+  font-weight: 600;
 }
 .messagelist tr.unroot td.subject a {
   text-decoration: underline;
@@ -3454,16 +3450,28 @@ table.fixedcopy {
   font-size: 0.4rem;
   width: 1.1rem;
   height: 2rem;
+  display: none;
 }
 .messagelist td.subject span.msgicon.status.unread:before {
+  display: block;
   content: "\f111";
-  color: #ffd452;
-  font-size: 0.5rem;
+  color: #f3cc43;
+  font-size: 0.45rem;
+  margin-right: 0.4rem;
+  vertical-align: 1px;
 }
 .messagelist td.subject span.msgicon.status.unreadchildren:before {
+  display: block;
   content: "\f111";
   font-weight: 400;
-  font-size: 0.5rem;
+  font-size: 0.45rem;
+  margin-right: 0.4rem;
+}
+.messagelist td.subject span.msgicon.status.replied:before,
+.messagelist td.subject span.msgicon.status.forwarded:before,
+.messagelist td.subject span.msgicon.status.replied.forwarded:before,
+.messagelist td.subject span.msgicon.status.replied.forwarded:after {
+  display: block;
 }
 .messagelist td.subject span.msgicon.status.replied:before {
   content: "\f3e5";
@@ -4428,7 +4436,7 @@ html.layout-phone .formcontainer .formbuttons {
   padding: 1rem 1rem 12rem;
   margin: 0 1rem 0.25rem 1rem;
   border-radius: 0.5rem;
-  border: 0.2rem dashed #d4dbde;
+  border: 0.2rem dashed #e6e6e6;
 }
 fieldset .file-upload {
   margin: 0;
@@ -4920,7 +4928,7 @@ div.tox .tox-edit-area {
 }
 div.tox .tox-dialog {
   border-radius: 0;
-  border-color: #d4dbde;
+  border-color: #e6e6e6;
   box-shadow: none;
   align-self: unset !important;
 }
@@ -5230,7 +5238,7 @@ div.tox .tox-collection__item-label {
   padding: 1rem 0.5rem 10rem 0.5rem !important;
 }
 .image-selector.droptarget {
-  border: 0.2rem dashed #d4dbde;
+  border: 0.2rem dashed #e6e6e6;
 }
 .image-selector.droptarget:after {
   margin-top: 2rem;
@@ -5255,7 +5263,7 @@ div.tox .tox-collection__item-label {
 }
 .image-selector .attachmentslist li:hover,
 .image-selector .attachmentslist li:focus {
-  background: #e6f1fc;
+  background: rgba(0, 117, 222, 0.05);
 }
 .image-selector .attachmentslist li span.name {
   flex: 1;
@@ -5268,7 +5276,7 @@ div.tox .tox-collection__item-label {
   height: 80px;
   width: 80px;
   display: flex;
-  border: 1px solid #f1f3f4;
+  border: 1px solid #f2f2f1;
   background: white;
   border-radius: 0.75rem;
   overflow: hidden;
@@ -5368,6 +5376,444 @@ html.layout-phone .image-selector .attachmentslist {
 .googie_list input {
   display: inline-block;
   margin: 0.25rem 0.5rem;
+}
+/**
+ * Notion skin - prototype overrides
+ *
+ * All rules here restyle the elastic widgets toward the v2 design
+ * prototype (rail with avatar/folders/account groups, compact lists,
+ * rounded search field, ...). Scoped to light mode and to the desktop
+ * layout (>= 1024px) where the prototype applies.
+ */
+html:not(.dark-mode) {
+  /* ============ mail task: folders live in the rail ============ */
+}
+@media screen and (min-width: 1025px) {
+  html:not(.dark-mode) {
+    /* ============ left rail ============ */
+    /* ============ list pane ============ */
+    /* ============ message view ============ */
+    /* ============ compose ============ */
+  }
+  html:not(.dark-mode) #layout-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  html:not(.dark-mode) #layout-menu .popover-header {
+    display: none !important;
+  }
+  html:not(.dark-mode) #layout-menu .menu-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #e6e6e6;
+    flex-shrink: 0;
+  }
+  html:not(.dark-mode) #layout-menu .menu-me .me-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0075de;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+  }
+  html:not(.dark-mode) #layout-menu .menu-me .me-avatar:before {
+    content: "\f007";
+  }
+  html:not(.dark-mode) #layout-menu .menu-me .me-email {
+    font-size: 11px;
+    color: #615d59;
+    text-align: center;
+    line-height: 1.3;
+    word-break: break-all;
+    max-width: 100%;
+  }
+  html:not(.dark-mode) #taskmenu {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  html:not(.dark-mode) #taskmenu a {
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    margin: 0 8px;
+    padding: 7px 9px;
+    border-radius: 7px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    gap: 8px;
+    text-align: left;
+  }
+  html:not(.dark-mode) #taskmenu a:before {
+    height: 15px !important;
+    width: 15px !important;
+    font-size: 14px !important;
+    line-height: 15px !important;
+    margin: 0 !important;
+    float: none !important;
+  }
+  html:not(.dark-mode) #taskmenu a.selected {
+    font-weight: 600;
+  }
+  html:not(.dark-mode) #taskmenu .action-buttons {
+    margin: 4px 8px 8px;
+  }
+  html:not(.dark-mode) #taskmenu .action-buttons a {
+    justify-content: center;
+    height: 34px;
+    padding: 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px -3px rgba(0, 117, 222, 0.45);
+    width: auto;
+    margin: 0;
+  }
+  html:not(.dark-mode) #taskmenu .action-buttons a:hover {
+    background: #005bab !important;
+    color: #fff !important;
+  }
+  html:not(.dark-mode) #taskmenu .menu-section {
+    flex-shrink: 0;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #a39e98;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 12px 17px 4px;
+    text-align: left;
+  }
+  html:not(.dark-mode) #taskmenu .menu-section-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+  html:not(.dark-mode) #taskmenu .menu-section-row .menu-section {
+    padding-right: 0;
+  }
+  html:not(.dark-mode) #taskmenu .menu-section-row .menu-folders-actions {
+    width: 24px;
+    height: 24px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    color: #a39e98;
+    font-size: 0;
+  }
+  html:not(.dark-mode) #taskmenu .menu-section-row .menu-folders-actions:before {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    height: 24px !important;
+  }
+  html:not(.dark-mode) #taskmenu .menu-section-row .menu-folders-actions:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #31302e;
+  }
+  html:not(.dark-mode) #taskmenu .special-buttons {
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #e6e6e6;
+  }
+  html:not(.dark-mode) #taskmenu .folderlist {
+    padding: 0;
+    margin: 0;
+  }
+  html:not(.dark-mode) #taskmenu .folderlist li > a {
+    padding: 7px 9px !important;
+    font-size: 12.5px;
+    line-height: 1.4;
+    border-radius: 7px;
+    margin: 0 8px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  html:not(.dark-mode) #taskmenu .folderlist li a:before {
+    font-size: 14px;
+    width: 15px;
+    margin: 0;
+  }
+  html:not(.dark-mode) #taskmenu .folderlist li.unread > a {
+    font-weight: 700;
+    padding-right: 2.2em !important;
+  }
+  html:not(.dark-mode) #taskmenu .folderlist li.selected > a,
+  html:not(.dark-mode) #taskmenu .folderlist li.selected > a:hover {
+    background: rgba(0, 117, 222, 0.12);
+    color: #0075de;
+    font-weight: 600;
+  }
+  html:not(.dark-mode) #taskmenu .folderlist li:not(.selected):hover > a {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  html:not(.dark-mode) #taskmenu .folderlist li .unreadcount {
+    min-width: 19px;
+    height: 17px;
+    line-height: 17px;
+    border-radius: 9px;
+    font-size: 10px;
+    padding: 0 5px;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  html:not(.dark-mode) .searchbar {
+    margin: 8px 12px;
+    height: 30px;
+    min-height: 30px;
+    line-height: 30px;
+    background: #f6f5f4;
+    border: 1px solid #e6e6e6;
+    border-radius: 7px;
+  }
+  html:not(.dark-mode) .searchbar form:before {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #a39e98;
+  }
+  html:not(.dark-mode) .searchbar input {
+    font-size: 12.5px;
+  }
+  html:not(.dark-mode) .searchbar a.options {
+    width: 28px;
+    font-size: 0;
+  }
+  html:not(.dark-mode) .searchbar a.options:before {
+    font-size: 13px;
+    width: 28px;
+  }
+  html:not(.dark-mode) #layout-list > .header,
+  html:not(.dark-mode) #layout-content > .header {
+    height: auto;
+    min-height: 42px;
+    line-height: normal;
+    padding: 4px 8px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  html:not(.dark-mode) #layout-list > .header .menu.toolbar li,
+  html:not(.dark-mode) #layout-content > .header .menu.toolbar li {
+    height: auto;
+  }
+  html:not(.dark-mode) #layout-list > .header .menu.toolbar a,
+  html:not(.dark-mode) #layout-content > .header .menu.toolbar a,
+  html:not(.dark-mode) #layout-list > .header a.toolbar-button,
+  html:not(.dark-mode) #layout-content > .header a.toolbar-button {
+    height: auto;
+    min-width: 0;
+    max-width: none;
+    padding: 6px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #615d59;
+  }
+  html:not(.dark-mode) #layout-list > .header .menu.toolbar a:before,
+  html:not(.dark-mode) #layout-content > .header .menu.toolbar a:before,
+  html:not(.dark-mode) #layout-list > .header a.toolbar-button:before,
+  html:not(.dark-mode) #layout-content > .header a.toolbar-button:before {
+    height: 15px !important;
+    line-height: 15px;
+    font-size: 13px;
+  }
+  html:not(.dark-mode) #layout-list > .header .menu.toolbar a:not(.disabled):hover,
+  html:not(.dark-mode) #layout-content > .header .menu.toolbar a:not(.disabled):hover,
+  html:not(.dark-mode) #layout-list > .header a.toolbar-button:not(.disabled):hover,
+  html:not(.dark-mode) #layout-content > .header a.toolbar-button:not(.disabled):hover {
+    background: #f6f5f4;
+    color: #31302e;
+  }
+  html:not(.dark-mode) #message-header {
+    margin-bottom: 0.75rem;
+  }
+  html:not(.dark-mode) #message-header > .subject {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  html:not(.dark-mode) #message-header .header-summary {
+    font-size: 12.5px;
+    color: #615d59;
+  }
+  html:not(.dark-mode) #message-header .header-links a {
+    color: #0075de;
+  }
+  html:not(.dark-mode) #message-header .header-links a:hover {
+    text-decoration: underline;
+  }
+  html:not(.dark-mode) #message-content .attachmentslist {
+    background: #f6f5f4;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 2px 12px;
+    width: fit-content;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right {
+    flex: 0 0 290px;
+    max-width: 290px;
+    background: #f6f5f4;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right .header {
+    height: auto;
+    min-height: 48px;
+    line-height: normal;
+    padding: 14px 18px 10px;
+    border-bottom: 0;
+    background: transparent;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right .header .header-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #37352f;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right .scroller {
+    padding: 0 12px 12px;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-attachments {
+    margin: 0 0 12px;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-attachments .upload-form .btn.attach {
+    width: 100%;
+    height: 34px;
+    border-radius: 8px;
+    background: #0075de;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-attachments .upload-form .btn.attach:hover {
+    background: #005bab;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-options {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-options .form-group.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 0;
+    margin: 0;
+    border-bottom: 1px solid #f0f0ef;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-options .form-group.row:last-child {
+    border-bottom: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-options .col-form-label {
+    font-size: 12.5px;
+    color: #31302e;
+    padding: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-options .form-check-input {
+    margin: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #layout-sidebar.sidebar-right #compose-options .custom-select {
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 12.5px;
+    padding: 0 8px;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers {
+    padding: 0 16px;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-group.row {
+    min-height: 46px;
+    align-items: center;
+    margin: 0;
+    border-bottom: 1px solid #f0f0ef;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-group.row:last-child {
+    border-bottom: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-group.row:focus-within {
+    box-shadow: inset 0 0 0 1.5px #0075de;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers label.col-form-label {
+    width: 58px;
+    max-width: 58px;
+    color: #a39e98;
+    font-size: 13px;
+    padding: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .form-control,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .tagedit-list,
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers input {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group-text.icon {
+    background: transparent;
+    border: 0;
+    color: #a39e98;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .compose-headers .input-group-text.icon:hover {
+    color: #37352f;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .formbuttons {
+    padding: 12px 16px;
+    border-top: 1px solid #e6e6e6;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .formbuttons .btn-primary.send {
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 5px 14px -4px rgba(0, 117, 222, 0.5);
+    border: 0;
+  }
+  html:not(.dark-mode) body.task-mail.action-compose #compose-content .formbuttons .btn-primary.send:hover {
+    background: #005bab;
+  }
+}
+html:not(.dark-mode) body.task-mail:not(.action-compose) #layout-sidebar {
+  display: none !important;
+}
+html:not(.dark-mode) body.task-mail:not(.action-compose) #layout-list {
+  flex: 4.5;
+  max-width: 46%;
+}
+html:not(.dark-mode) body.task-mail:not(.action-compose) #layout-content {
+  flex: 6;
+}
+html:not(.dark-mode) body.task-mail:not(.action-compose) #layout-list > .header .back-sidebar-button {
+  display: none !important;
+}
+html:not(.dark-mode) body.task-mail.action-compose .menu-folders-actions {
+  display: none !important;
 }
 /*** Login form ***/
 .task-login #layout-content {

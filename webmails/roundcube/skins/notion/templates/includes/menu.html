@@ -1,5 +1,10 @@
 <div id="layout-menu">
 	<h2 id="aria-label-tasknav" class="voice"><roundcube:label name="arialabeltasknav" /></h2>
+	<!-- notion: account block (avatar + email) -->
+	<div class="menu-me">
+		<span class="me-avatar" aria-hidden="true"></span>
+		<span class="me-email"><roundcube:object name="username" /></span>
+	</div>
 	<div class="popover-header">
 		<roundcube:object name="logo" src="/images/logo.svg" id="logo" alt="Logo" />
 		<a class="button icon cancel"><span class="inner"><roundcube:label name="close" /></span></a>
@@ -21,6 +26,26 @@
 		<roundcube:else />
 			<roundcube:button command="mail" label="mail" type="link" innerClass="inner"
 				class="mail" classSel="mail selected" />
+		<roundcube:endif />
+		<!-- notion: folders inside the rail. The mail task renders the real
+		     mailboxlist (with unread counts); other tasks get static links
+		     because the mailboxlist object renders empty outside the mail task. -->
+		<roundcube:if condition="env:task == 'mail'" />
+			<div class="menu-section-row">
+				<div class="menu-section menu-section-folders"><span>邮箱</span></div>
+				<roundcube:button name="folderactions" type="link" title="folderactions" label="actions"
+					class="button icon sidebar-menu menu-folders-actions" innerclass="inner" data-popup="mailboxoptions-menu" />
+			</div>
+			<roundcube:object name="mailboxlist" id="mailboxlist" class="treelist listing folderlist" folder_filter="mail" unreadwrap="%s" />
+		<roundcube:else />
+			<div class="menu-section menu-section-folders"><span>邮箱</span></div>
+			<ul class="treelist listing folderlist notion-staticfolders">
+				<li class="mailbox inbox"><a href="./?_task=mail&amp;_mbox=INBOX"><roundcube:label name="inbox" /></a></li>
+				<li class="mailbox drafts"><a href="./?_task=mail&amp;_mbox=Drafts"><roundcube:label name="drafts" /></a></li>
+				<li class="mailbox sent"><a href="./?_task=mail&amp;_mbox=Sent"><roundcube:label name="sent" /></a></li>
+				<li class="mailbox junk"><a href="./?_task=mail&amp;_mbox=Junk"><roundcube:label name="junk" /></a></li>
+				<li class="mailbox trash"><a href="./?_task=mail&amp;_mbox=Trash"><roundcube:label name="trash" /></a></li>
+			</ul>
 		<roundcube:endif />
 		<!-- notion: section caption before the "go to" group (contacts / plugins / settings) -->
 		<div class="menu-section menu-section-go"><span>转到</span></div>
