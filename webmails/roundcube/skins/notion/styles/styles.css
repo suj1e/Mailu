@@ -5494,6 +5494,9 @@ html:not(.dark-mode) {
     padding: 14px 19px 5px;
     text-align: left;
   }
+  html:not(.dark-mode) #taskmenu a.button-mailu:before {
+    content: "\f0e0";
+  }
   html:not(.dark-mode) #taskmenu .menu-section-row {
     display: flex;
     align-items: center;

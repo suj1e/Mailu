@@ -11,22 +11,16 @@
 	</div>
 	<div id="taskmenu" class="menu toolbar" role="navigation" aria-labelledby="aria-label-tasknav">
 		<span class="action-buttons">
-			<roundcube:if condition="env:action == 'compose' and env:task == 'mail'" />
-				<roundcube:button command="compose" type="link" class="compose selected"
-					label="compose" title="writenewmessage" innerclass="inner" />
-			<roundcube:else />
-				<roundcube:button command="compose" type="link" class="compose"
-					label="compose" title="writenewmessage" innerclass="inner"
-					data-fab="true" data-fab-task="mail" data-fab-action="none" />
-			<roundcube:endif />
-		</span>
 		<roundcube:if condition="env:action == 'compose' and env:task == 'mail'" />
-			<roundcube:button command="mail" label="mail" type="link" innerClass="inner"
-				class="mail" />
+			<roundcube:button command="compose" type="link" class="compose selected"
+				label="compose" title="writenewmessage" innerclass="inner" />
 		<roundcube:else />
-			<roundcube:button command="mail" label="mail" type="link" innerClass="inner"
-				class="mail" classSel="mail selected" />
+			<roundcube:button command="compose" type="link" class="compose"
+				label="compose" title="writenewmessage" innerclass="inner"
+				data-fab="true" data-fab-task="mail" data-fab-action="none" />
 		<roundcube:endif />
+		</span>
+		<!-- notion: no standalone "mail" task button - the folder group below covers it -->
 		<!-- notion: folders inside the rail. The mail task renders the real
 		     mailboxlist (with unread counts); other tasks get static links
 		     because the mailboxlist object renders empty outside the mail task. -->
