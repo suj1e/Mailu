@@ -5408,25 +5408,11 @@ html:not(.dark-mode) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.6rem 0.6rem 0.9rem;
+    justify-content: center;
+    padding: 0.6rem 0.6rem 0.8rem;
     margin-bottom: 0.6rem;
     border-bottom: 1px solid #e6e6e6;
     flex-shrink: 0;
-  }
-  html:not(.dark-mode) #layout-menu .menu-me .me-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #0075de;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.05rem;
-  }
-  html:not(.dark-mode) #layout-menu .menu-me .me-avatar:before {
-    content: "\f007";
   }
   html:not(.dark-mode) #layout-menu .menu-me .me-email {
     font-size: 11px;
