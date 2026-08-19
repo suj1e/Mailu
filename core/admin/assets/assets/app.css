@@ -431,6 +431,11 @@ body.sidebar-mini .main-sidebar .sidebar {
 }
 
 /* rail menu: same metrics as webmail (12.5px text, 15px icons) */
+.main-sidebar .sidebar,
+.main-sidebar nav,
+.main-sidebar .nav-sidebar {
+  overflow-x: hidden !important;
+}
 .sidebar-dark-primary .nav-sidebar .nav-item .nav-link {
   margin: 0 10px;
   padding: 8px 10px;
@@ -440,6 +445,11 @@ body.sidebar-mini .main-sidebar .sidebar {
   gap: 8px;
   display: flex;
   align-items: center;
+}
+.sidebar-dark-primary .nav-sidebar .nav-item .nav-link p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .sidebar-dark-primary .nav-sidebar .nav-item .nav-link i.nav-icon {
   font-size: 15px;
