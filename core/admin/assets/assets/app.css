@@ -381,10 +381,10 @@ select.form-control,
   background-color: var(--nt-canvas) !important;
 }
 
-/* ---- content header: a pane-header bar like webmail (white strip,
-       53px, hairline bottom), title left / actions right ---- */
+/* ---- content header: a pane-header bar like webmail (warm-white strip
+       matching the rail, 53px, hairline bottom), title left / actions right ---- */
 .content-header {
-  background: var(--nt-surface);
+  background: var(--nt-canvas);
   border-bottom: 1px solid var(--nt-hairline);
   min-height: 53px;
   display: flex;
@@ -444,13 +444,15 @@ body.sidebar-mini .main-sidebar .sidebar {
   box-shadow: none !important;
 }
 
-/* email at the top of the rail (same as webmail) */
+/* email at the top of the rail, 53px tall so it lines up with the
+   content-header bar on the right (same as webmail) */
 .menu-me {
+  height: 53px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 10px 13px;
-  margin: 0 0 10px;
+  padding: 0 10px;
+  margin: 0;
   border-bottom: 1px solid var(--nt-hairline);
 }
 .menu-me .me-email {
