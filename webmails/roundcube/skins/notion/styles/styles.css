@@ -5528,9 +5528,9 @@ html:not(.dark-mode) body {
   }
   html:not(.dark-mode) #taskmenu .special-buttons {
     position: sticky;
-    bottom: 16px;
+    bottom: 0;
     margin-top: auto;
-    padding: 8px 0 8px;
+    padding: 8px 0 10px;
     border-top: 1px solid #e6e6e6;
   }
   html:not(.dark-mode) #taskmenu .folderlist {

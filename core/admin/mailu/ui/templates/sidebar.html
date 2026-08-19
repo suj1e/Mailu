@@ -8,41 +8,42 @@
   <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
       {%- if current_user.is_authenticated %}
+      {%- set myaccount_prefixes = [url_for('.user_settings'), url_for('.user_password_change'), url_for('.user_reply'), url_for('.token_list').rsplit('/', 1)[0], url_for('.client')] %}
       <li class="nav-header text-uppercase text-primary" role="none">{% trans %}My account{% endtrans %}</li>
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.user_settings') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.user_settings') }}" class="nav-link{% if request.path.startswith(myaccount_prefixes[0]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-wrench"></i>
           <p>{% trans %}Settings{% endtrans %}</p>
         </a>
       </li>
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.user_password_change') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.user_password_change') }}" class="nav-link{% if request.path.startswith(myaccount_prefixes[1]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-lock"></i>
           <p>{% trans %}Update password{% endtrans %}</p>
         </a>
       </li>
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.user_reply') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.user_reply') }}" class="nav-link{% if request.path.startswith(myaccount_prefixes[2]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-plane"></i>
           <p>{% trans %}Auto-reply{% endtrans %}</p>
         </a>
       </li>
       {%- if config["FETCHMAIL_ENABLED"] %}
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.fetch_list') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.fetch_list') }}" class="nav-link{% if request.path.startswith(url_for('.fetch_list').rsplit('/', 1)[0]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fas fa-download"></i>
           <p>{% trans %}Fetched accounts{% endtrans %}</p>
         </a>
       </li>
       {%- endif %}
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.token_list') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.token_list') }}" class="nav-link{% if request.path.startswith(myaccount_prefixes[3]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fas fa-ticket-alt"></i>
           <p>{% trans %}Authentication tokens{% endtrans %}</p>
         </a>
       </li>
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.client') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.client') }}" class="nav-link{% if request.path.startswith(myaccount_prefixes[4]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-laptop"></i>
           <p>{% trans %}Client setup{% endtrans %}</p>
         </a>
@@ -53,25 +54,25 @@
       {%- endif %}
       {%- if current_user.global_admin %}
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.announcement') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.announcement') }}" class="nav-link{% if request.path.startswith(url_for('.announcement')) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-bullhorn"></i>
           <p>{% trans %}Announcement{% endtrans %}</p>
         </a>
       </li>
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.admin_list') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.admin_list') }}" class="nav-link{% if request.path.startswith(url_for('.admin_list').rsplit('/', 1)[0]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-user"></i>
           <p>{% trans %}Administrators{% endtrans %}</p>
         </a>
       </li>
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.relay_list') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.relay_list') }}" class="nav-link{% if request.path.startswith(url_for('.relay_list').rsplit('/', 1)[0]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-reply-all"></i>
           <p>{% trans %}Relayed domains{% endtrans %}</p>
         </a>
       </li>
       <li class="nav-item" role="none">
-        <a href="{{ config["WEB_ADMIN"] }}/antispam/" data-clicked="{{ url_for('.antispam') }}" target="_blank" class="nav-link" role="menuitem">
+        <a href="{{ config["WEB_ADMIN"] }}/antispam/" data-clicked="{{ url_for('.antispam') }}" target="_blank" class="nav-link{% if request.path.startswith('/admin/antispam') %} active{% endif %}" role="menuitem">
         <i class="nav-icon fas fa-trash-alt"></i>
         <p>{% trans %}Antispam{% endtrans %}</p>
         </a>
@@ -79,7 +80,7 @@
       {%- endif %}
       {%- if current_user.manager_of or current_user.global_admin %}
       <li class="nav-item" role="none">
-        <a href="{{ url_for('.domain_list') }}" class="nav-link" role="menuitem">
+        <a href="{{ url_for('.domain_list') }}" class="nav-link{% if request.path.startswith(url_for('.domain_list').rsplit('/', 1)[0]) %} active{% endif %}" role="menuitem">
           <i class="nav-icon fa fa-envelope"></i>
           <p>{% trans %}Mail domains{% endtrans %}</p>
         </a>
@@ -143,7 +144,7 @@
     </ul>
   </nav>
   {%- if current_user.is_authenticated %}
-  <!-- notion: account group pinned to the bottom of the rail -->
+  <!-- notion: account group pinned to the rail bottom -->
   <div class="sidebar-bottom">
     <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
       <li class="nav-item" role="none">

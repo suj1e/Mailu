@@ -343,7 +343,7 @@ select.form-control,
 }
 .pagination .page-link {
   border: 1px solid var(--nt-hairline);
-  border-radius: 6px;
+  border-radius: 6px !important;
   color: var(--nt-ink-muted);
   background: var(--nt-surface);
   padding: .3rem .7rem;
@@ -411,7 +411,9 @@ select.form-control,
 }
 .content-wrapper .content-header .float-right {
   float: none !important;
-  margin-left: auto;
+}
+.content-wrapper .content-header .col-sm-6:last-child {
+  text-align: right;
 }
 
 /* cards: webmail has no drop shadows */
@@ -494,8 +496,9 @@ body.sidebar-mini .main-sidebar .sidebar {
   font-size: 10.5px;
 }
 
-/* account group pinned to the rail bottom */
-.sidebar {
+/* account group pinned to the rail bottom, aligned with the footer */
+.main-sidebar .sidebar {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
