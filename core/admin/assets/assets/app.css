@@ -127,10 +127,9 @@ body {
 .sidebar-dark-primary .nav-sidebar .nav-link.active p {
   color: var(--nt-primary)!important;
 }
-.sidebar-dark-primary .nav-sidebar .nav-link.active p,
-.sidebar-dark-primary .nav-sidebar .nav-link.active i.nav-icon {
+.sidebar-dark-primary .nav-sidebar .nav-link.active p {
   color: var(--nt-primary)!important;
-  font-weight: 500;
+  font-weight: 600!important;
 }
 .sidebar-dark-primary .nav-header {
   color: var(--nt-ink-faint)!important;
@@ -523,7 +522,10 @@ body.sidebar-mini .main-sidebar .sidebar {
 }
 .sidebar-dark-primary .nav-sidebar .nav-item .nav-link i.nav-icon {
   font-size: 15px;
-  width: 15px;
+  width: auto;
+  min-width: 15px;
+  flex-shrink: 0;
+  text-align: center;
   margin-right: 0;
 }
 .sidebar-dark-primary .nav-sidebar .nav-header {
