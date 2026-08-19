@@ -324,12 +324,12 @@ html.iframe #layout-content {
 }
 #layout-menu .popover-header img {
   max-height: 64px;
-  max-width: 175px;
+  max-width: 250px;
   padding: 0.25rem;
 }
 @media screen and (min-width: 481px) and (max-width: 1024px) {
   #layout-menu .popover-header img {
-    max-width: 78.75px;
+    max-width: 112.5px;
   }
 }
 @media screen and (min-width: 481px) {
@@ -459,7 +459,7 @@ html.layout-phone #layout-menu .popover-header a .inner {
 }
 @media screen and (min-width: 1025px) {
   #layout-menu {
-    width: 175px;
+    width: 250px;
   }
 }
 @media screen and (min-width: 1201px) {
@@ -2650,7 +2650,7 @@ a.toolbar-button {
 }
 @media screen and (min-width: 1025px) {
   #taskmenu a {
-    width: 175px;
+    width: 250px;
     font-size: 1rem;
   }
   #taskmenu a:before {
@@ -5407,7 +5407,7 @@ html:not(.dark-mode) body {
     /* ============ compose ============ */
   }
   html:not(.dark-mode) #layout-menu {
-    width: 175px;
+    width: 250px;
     display: flex;
     flex-direction: column;
   }
@@ -6525,7 +6525,7 @@ html.dark-mode #taskmenu .action-buttons a {
 }
 @media screen and (min-width: 1025px) {
   html.dark-mode #taskmenu a {
-    width: 174px;
+    width: 249px;
   }
 }
 html.dark-mode.layout-small .popover,
