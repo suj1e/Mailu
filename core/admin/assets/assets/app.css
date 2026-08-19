@@ -118,7 +118,8 @@ body {
 }
 .sidebar-dark-primary .nav-sidebar .nav-link.active,
 .sidebar-dark-primary .nav-sidebar .nav-link.active:hover {
-  background-color: rgba(0,117,222,.1)!important;
+  background-color: rgba(0,117,222,.12)!important;
+  box-shadow: inset 3px 0 0 var(--nt-primary);
 }
 .sidebar-dark-primary .nav-sidebar .nav-link.active p,
 .sidebar-dark-primary .nav-sidebar .nav-link.active i.nav-icon {
@@ -334,7 +335,16 @@ select.form-control,
 .dataTables_length select {
   border-radius: 8px;
   border: 1px solid var(--nt-input-border);
-  padding: .2rem .5rem;
+  padding: 0 8px;
+  height: 28px;
+  min-width: 60px;
+  font-size: 13px;
+  color: var(--nt-ink);
+  background: var(--nt-surface);
+}
+.dataTables_length label {
+  font-size: 13px;
+  color: var(--nt-ink-muted);
 }
 
 /* ---- DataTable pagination: small rounded buttons like webmail ---- */
@@ -517,7 +527,7 @@ body.sidebar-mini .main-sidebar .sidebar {
 
 /* account group pinned to the rail bottom, aligned with the footer */
 .main-sidebar .sidebar {
-  height: 100%;
+  height: 100vh !important;
   display: flex;
   flex-direction: column;
 }
