@@ -383,7 +383,7 @@ select.form-control,
 
 /* ---- content header: a pane-header bar like webmail (warm-white strip
        matching the rail, 53px, hairline bottom), title left / actions right ---- */
-.content-header {
+.content-wrapper .content-header {
   background: var(--nt-canvas);
   border-bottom: 1px solid var(--nt-hairline);
   min-height: 53px;
@@ -391,25 +391,25 @@ select.form-control,
   align-items: center;
   padding: 8px 24px;
 }
-.content-header .row {
+.content-wrapper .content-header .row {
   width: 100%;
   margin: 0 !important; /* beats bootstrap .mb-2 */
   align-items: center;
 }
-.content-header h1 {
+.content-wrapper .content-header h1 {
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -.2px;
   color: var(--nt-ink);
   display: inline;
 }
-.content-header small {
+.content-wrapper .content-header small {
   color: var(--nt-ink-muted);
   font-size: .8125rem;
   margin-left: 10px;
   display: inline;
 }
-.content-header .float-right {
+.content-wrapper .content-header .float-right {
   float: none !important;
   margin-left: auto;
 }
@@ -420,7 +420,7 @@ select.form-control,
 }
 
 /* content padding matches webmail breathing */
-.content {
+.content-wrapper .content {
   padding: 24px 28px;
 }
 
