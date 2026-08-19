@@ -23,10 +23,6 @@
     {#- 目的地按钮:name/value 与后端字段约定一致(value 必须非空,
         WTForms 以 POST 键值判定按钮,空值会被当作未点击)。 -#}
     <button type="submit" name="submitWebmail" value="webmail" class="sso-btn-login">登 录</button>
-    <div class="sso-admin-row">
-      需要管理后台?
-      <button type="submit" name="submitAdmin" value="admin" class="sso-admin-link">管理后台 →</button>
-    </div>
   </form>
 </div>
 {%- endblock %}
