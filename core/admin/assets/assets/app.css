@@ -393,7 +393,7 @@ select.form-control,
 }
 .content-header .row {
   width: 100%;
-  margin: 0;
+  margin: 0 !important; /* beats bootstrap .mb-2 */
   align-items: center;
 }
 .content-header h1 {
