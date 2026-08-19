@@ -119,7 +119,13 @@ body {
 .sidebar-dark-primary .nav-sidebar .nav-link.active,
 .sidebar-dark-primary .nav-sidebar .nav-link.active:hover {
   background-color: rgba(0,117,222,.12)!important;
-  box-shadow: inset 3px 0 0 var(--nt-primary);
+  color: var(--nt-primary)!important;
+  font-weight: 600!important;
+  box-shadow: inset 3px 0 0 var(--nt-primary)!important;
+}
+.sidebar-dark-primary .nav-sidebar .nav-link.active i.nav-icon,
+.sidebar-dark-primary .nav-sidebar .nav-link.active p {
+  color: var(--nt-primary)!important;
 }
 .sidebar-dark-primary .nav-sidebar .nav-link.active p,
 .sidebar-dark-primary .nav-sidebar .nav-link.active i.nav-icon {
