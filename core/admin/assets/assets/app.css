@@ -431,14 +431,14 @@ select.form-control,
 
 /* narrow rail */
 body.sidebar-mini .main-sidebar {
-  width: 250px !important;
+  width: 200px !important;
 }
 body.sidebar-mini .main-sidebar .sidebar {
-  width: 250px !important;
+  width: 200px !important;
 }
 .content-wrapper,
 .main-footer {
-  margin-left: 250px !important;
+  margin-left: 200px !important;
 }
 .main-sidebar {
   box-shadow: none !important;
@@ -551,7 +551,7 @@ i {
     display: inline-flex;
   }
   body.sidebar-mini .main-sidebar {
-    transform: translateX(-250px);
+    transform: translateX(-200px);
     transition: transform .2s ease;
   }
   body.sidebar-mini.sidebar-collapse .main-sidebar {
@@ -562,7 +562,7 @@ i {
     margin-left: 0 !important;
   }
   body.sidebar-mini.sidebar-collapse .content-wrapper {
-    margin-left: 250px !important;
+    margin-left: 200px !important;
   }
 }
 
