@@ -337,21 +337,30 @@ select.form-control,
   padding: .2rem .5rem;
 }
 
-/* ---- DataTable pagination: small rounded buttons ---- */
+/* ---- DataTable pagination: small rounded buttons like webmail ---- */
+.pagination {
+  gap: 4px;
+  margin: 0;
+}
 .pagination .page-item {
-  margin: 0 2px;
+  margin: 0;
 }
 .pagination .page-link {
   border: 1px solid var(--nt-hairline);
   border-radius: 6px !important;
   color: var(--nt-ink-muted);
   background: var(--nt-surface);
-  padding: .3rem .7rem;
-  font-size: .8125rem;
+  padding: 0 8px;
+  font-size: 13px;
+  line-height: 1;
   min-width: 30px;
-  text-align: center;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
 }
-.pagination .page-item:not(.active) .page-link:hover {
+.pagination .page-item:not(.active):not(.disabled) .page-link:hover {
   background: var(--nt-canvas);
   color: var(--nt-ink);
   border-color: var(--nt-hairline);
@@ -361,12 +370,22 @@ select.form-control,
   border-color: var(--nt-primary);
   color: #fff;
   font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 117, 222, .25);
 }
 .pagination .page-item.disabled .page-link {
   background: var(--nt-surface);
   color: var(--nt-ink-faint);
   border-color: var(--nt-hairline);
-  opacity: .6;
+  opacity: .55;
+}
+
+/* DataTable footer info text */
+.dataTables_info {
+  color: var(--nt-ink-faint);
+  font-size: 13px;
+}
+.dataTables_wrapper .row:last-child {
+  align-items: center;
 }
 
 /* ---- table header: 1px hairline instead of AdminLTE's 2px ---- */
