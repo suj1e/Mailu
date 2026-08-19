@@ -1,12 +1,8 @@
 <div class="sidebar text-sm">
   {%- if current_user.is_authenticated %}
-  <div class="user-panel mt-3 pb-3 mb-3 d-flex" title="{{ current_user }}">
-    <div class="image">
-      <div class="div-circle elevation-2"><i class="fa fa-user text-lg text-dark"></i></div>
-    </div>
-    <div class="info">
-      <a href="{{ url_for('.user_settings') }}" class="d-block">{{ current_user.displayed_name or current_user }}</a>
-    </div>
+  <!-- notion: account email at the top of the rail (webmail look) -->
+  <div class="menu-me">
+    <span class="me-email">{{ current_user }}</span>
   </div>
   {%- endif %}
   <nav class="mt-2">
@@ -45,14 +41,12 @@
           <p>{% trans %}Authentication tokens{% endtrans %}</p>
         </a>
       </li>
-      {%- if current_user.is_authenticated %}
       <li class="nav-item" role="none">
         <a href="{{ url_for('.client') }}" class="nav-link" role="menuitem">
           <i class="nav-icon fa fa-laptop"></i>
           <p>{% trans %}Client setup{% endtrans %}</p>
         </a>
       </li>
-      {%- endif %}
 
       {%- if current_user.manager_of or current_user.global_admin %}
       <li class="nav-header text-uppercase text-primary" role="none">{% trans %}Administration{% endtrans %}</li>
@@ -130,14 +124,7 @@
         </a>
       </li>
       {%- endif %}
-      {%- if current_user.is_authenticated %}
-      <li class="nav-item" role="none">
-        <a href="{{ url_for('sso.logout') }}" class="nav-link" role="menuitem">
-          <i class="nav-icon fas fa-sign-out-alt"></i>
-          <p>{% trans %}Sign out{% endtrans %}</p>
-        </a>
-      </li>
-      {% else %}
+      {%- if not current_user.is_authenticated %}
       <li class="nav-item" role="none">
         <a href="{{ url_for('sso.login') }}" class="nav-link" role="menuitem">
           <i class="nav-icon fas fa-sign-in-alt"></i>
@@ -155,4 +142,17 @@
       {%- endif %}
     </ul>
   </nav>
+  {%- if current_user.is_authenticated %}
+  <!-- notion: account group pinned to the bottom of the rail -->
+  <div class="sidebar-bottom">
+    <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+      <li class="nav-item" role="none">
+        <a href="{{ url_for('sso.logout') }}" class="nav-link" role="menuitem">
+          <i class="nav-icon fas fa-sign-out-alt"></i>
+          <p>{% trans %}Sign out{% endtrans %}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  {%- endif %}
 </div>
