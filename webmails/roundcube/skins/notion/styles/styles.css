@@ -447,6 +447,7 @@ html.layout-phone #layout-menu .popover-header a .inner {
   #layout-menu {
     background-color: #f6f5f4;
     width: 42px;
+    flex-shrink: 0;
   }
 }
 @media screen and (min-width: 769px) {
@@ -460,6 +461,7 @@ html.layout-phone #layout-menu .popover-header a .inner {
 @media screen and (min-width: 1025px) {
   #layout-menu {
     width: 200px;
+    flex-shrink: 0;
   }
 }
 @media screen and (min-width: 1201px) {
