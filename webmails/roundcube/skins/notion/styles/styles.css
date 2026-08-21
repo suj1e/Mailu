@@ -190,7 +190,7 @@ html:not(.touch) ::-webkit-scrollbar-thumb {
 */
 html {
   height: 100%;
-  font-size: 14px;
+  font-size: 15px;
 }
 body {
   min-width: 240px;
