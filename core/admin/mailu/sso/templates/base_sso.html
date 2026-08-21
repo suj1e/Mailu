@@ -33,7 +33,7 @@
 
         <div class="sso-hero-foot">
           {%- if config["WEBSITE"] and config["WEBSITE"] != "https://mailu.io" %}
-          <a href="{{ config["WEBSITE"] }}" target="_blank" rel="noreferrer">{{ config["SITENAME"] }} 官网</a>
+          <a href="{{ config["WEBSITE"] }}" target="_blank" rel="noreferrer">{{ config["WEBSITE_NAME"] or config["SITENAME"] }} 官网</a>
           {%- else %}
           © 2026 {{ config["SITENAME"] }}
           {%- endif %}
