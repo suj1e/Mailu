@@ -472,6 +472,12 @@ html.layout-phone #layout-menu .popover-header a .inner {
     display: none;
   }
 }
+@media screen and (min-width: 1201px) {
+  /* notion: the message view is a standalone page (no list pane); keep its back button */
+  body.task-mail.action-show #layout-content > .header a.back-list-button {
+    display: inline-block;
+  }
+}
 html.layout-phone .hidden-phone {
   display: none !important;
 }

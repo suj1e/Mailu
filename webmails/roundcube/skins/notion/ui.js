@@ -1854,7 +1854,10 @@ function rcube_elastic_ui()
 
     function screen_resize_small_none()
     {
-        buttons.back_list.filter(function() { return $(this).parents('#layout-sidebar').length == 0; }).hide();
+        buttons.back_list.filter(function() {
+            // notion: keep the back button on the standalone message view
+            return $(this).parents('#layout-sidebar').length == 0 && !$('body').is('.action-show');
+        }).hide();
         $('ul.menu.popupmenu').removeClass('popupmenu');
     };
 

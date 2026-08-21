@@ -25,6 +25,9 @@
                 <a class="sidebar-toggle" data-widget="pushmenu" href="#" role="button" aria-label="{% trans %}toggle sidebar{% endtrans %}">
                   <i class="fas fa-bars"></i>
                 </a>
+                {%- if '/edit' in request.path or '/create' in request.path or '/details' in request.path or '/signup' in request.path %}
+                <a href="#" class="nt-back" onclick="history.back(); return false;" title="{% trans %}Back{% endtrans %}" aria-label="{% trans %}Back{% endtrans %}"><i class="fas fa-arrow-left"></i></a>
+                {%- endif %}
                 <h1 class="m-0">{%- block title %}{%- endblock %}</h1>
                 <small>{% block subtitle %}{% endblock %}</small>
               </div>

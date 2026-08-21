@@ -99,6 +99,22 @@ body {
   background: var(--nt-canvas);
   color: var(--nt-ink);
 }
+.nt-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 6px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--nt-ink-muted);
+  vertical-align: middle;
+}
+.nt-back:hover {
+  background: rgba(0, 0, 0, .05);
+  color: var(--nt-ink);
+}
 .content-wrapper {
   background: var(--nt-canvas);
 }
