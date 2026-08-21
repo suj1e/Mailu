@@ -101,6 +101,15 @@ function rcube_elastic_ui()
     // Initialize responsive toolbars (have to be before popups init)
     toolbar_init();
 
+    // notion: on the standalone message view the list pane is gone; move the
+    // back button into the toolbar so it aligns with the other items
+    if (rcmail.env.action == 'show' && !rcmail.env.extwin) {
+        var back_btn = layout.content.find('.header > a.back-list-button');
+        if (back_btn.length && $('#toolbar-menu').length) {
+            back_btn.prependTo($('#toolbar-menu')).wrap('<li role="menuitem">');
+        }
+    }
+
     // Initialize content frame and list handlers
     content_frame_init();
 
