@@ -6,9 +6,12 @@
   <div class="sso-sub">使用您的企业邮箱账号</div>
   <form class="form" method="post" role="form">
     {{ form.hidden_tag() }}
-    <div class="sso-field">
+    <div class="sso-field" data-mail-domain="{{ config['DOMAIN'] if config['DOMAIN'] and config['DOMAIN'] != 'mailu.io' else '' }}">
       <label class="sso-label" for="email">{% trans %}E-mail{% endtrans %}</label>
       {{ form.email(class_="sso-input", autofocus=True, placeholder="you@example.com") }}
+      {%- if config['DOMAIN'] and config['DOMAIN'] != 'mailu.io' %}
+      <p class="sso-domain-tip">只输用户名可自动补全 @{{ config['DOMAIN'] }}</p>
+      {%- endif %}
       {%- for error in form.email.errors %}
       <p class="sso-error">{{ error }}</p>
       {%- endfor %}

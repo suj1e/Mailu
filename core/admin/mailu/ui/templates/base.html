@@ -49,5 +49,33 @@
     </div>
     <script src="{{ url_for('static', filename='vendor.js') }}"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script>
+      // 给所有密码框加显示/隐藏小眼睛(跳过 input-group 内的,避免破坏布局)
+      document.querySelectorAll('.content input[type=password]').forEach(function(input) {
+        if (input.closest('.input-group-prepend, .input-group-append, .nt-pw-wrap')) return;
+        var wrap = document.createElement('span');
+        wrap.className = 'nt-pw-wrap';
+        input.parentNode.insertBefore(wrap, input);
+        wrap.appendChild(input);
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'nt-pw-eye';
+        btn.tabIndex = -1;
+        btn.setAttribute('aria-label', '显示密码');
+        btn.innerHTML = '<i class="fas fa-eye" aria-hidden="true"></i>';
+        wrap.appendChild(btn);
+      });
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('.nt-pw-eye');
+        if (!btn) return;
+        var input = btn.parentNode.querySelector('input');
+        if (!input) return;
+        var show = input.type === 'password';
+        input.type = show ? 'text' : 'password';
+        btn.innerHTML = show
+          ? '<i class="fas fa-eye-slash" aria-hidden="true"></i>'
+          : '<i class="fas fa-eye" aria-hidden="true"></i>';
+      });
+    </script>
   </body>
 </html>

@@ -64,6 +64,22 @@
           ? '<i class="fas fa-eye-slash" aria-hidden="true"></i>'
           : '<i class="fas fa-eye" aria-hidden="true"></i>';
       });
+
+      // 登录邮箱:只输用户名时自动补全本站域名
+      (function() {
+        var field = document.querySelector('.sso-field[data-mail-domain]');
+        if (!field) return;
+        var domain = field.getAttribute('data-mail-domain');
+        if (!domain) return;
+        var input = field.querySelector('input');
+        if (!input) return;
+        var complete = function() {
+          var v = input.value.trim();
+          if (v && v.indexOf('@') === -1) input.value = v + '@' + domain;
+        };
+        input.addEventListener('blur', complete);
+        input.form.addEventListener('submit', complete);
+      })();
     </script>
   </body>
 </html>
