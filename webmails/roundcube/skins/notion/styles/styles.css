@@ -474,21 +474,38 @@ html.layout-phone #layout-menu .popover-header a .inner {
 }
 @media screen and (min-width: 1201px) {
   /* notion: the message view is a standalone page (no list pane); keep its back
-     button in the toolbar row regardless of the elastic hide rules */
+     button as the first toolbar item - icon over label, same as its siblings */
   body.task-mail.action-show #layout-content > .header {
     display: flex !important;
     flex-wrap: nowrap !important;
-    align-items: center;
+    align-items: flex-start;
   }
   body.task-mail.action-show #layout-content > .header a.back-list-button {
-    display: inline-block !important;
+    display: inline-flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
     flex: 0 0 auto;
     margin: 0 4px 0 0;
+    padding: 6px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #615d59;
+  }
+  body.task-mail.action-show #layout-content > .header a.back-list-button:hover {
+    background: #f6f5f4;
+    color: #31302e;
   }
   body.task-mail.action-show #layout-content > .header a.back-list-button:before {
     height: 15px !important;
     line-height: 15px;
     font-size: 13px;
+    margin: 0 0 2px 0;
+  }
+  body.task-mail.action-show #layout-content > .header a.back-list-button .inner {
+    display: block;
   }
 }
 html.layout-phone .hidden-phone {
