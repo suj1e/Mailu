@@ -65,22 +65,53 @@
           : '<i class="fas fa-eye" aria-hidden="true"></i>';
       });
 
-      // 登录邮箱:输入用户名时,下拉提示"用户名@本站域名"供点选
+      // 登录邮箱:输入用户名时,弹出可点选的"用户名@本站域名"提示
       (function() {
         var field = document.querySelector('.sso-field[data-mail-domain]');
         if (!field) return;
         var domain = field.getAttribute('data-mail-domain');
         var input = field.querySelector('input');
-        var list = field.querySelector('datalist');
-        if (!domain || !input || !list) return;
-        input.addEventListener('input', function() {
-          list.innerHTML = '';
+        if (!domain || !input) return;
+
+        field.classList.add('sso-ac-field');
+        var box = document.createElement('div');
+        box.className = 'sso-ac';
+        box.hidden = true;
+        var item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'sso-ac-item';
+        box.appendChild(item);
+        field.appendChild(box);
+
+        var active = false;
+        function suggestion() { return input.value.trim() + '@' + domain; }
+        function setActive(on) { active = on; item.classList.toggle('active', on); }
+        function close() { box.hidden = true; setActive(false); }
+        function refresh() {
           var v = input.value.trim();
-          if (!v || v.indexOf('@') !== -1) return;
-          var opt = document.createElement('option');
-          opt.value = v + '@' + domain;
-          list.appendChild(opt);
+          if (v && v.indexOf('@') === -1) {
+            item.textContent = suggestion();
+            box.hidden = false;
+            setActive(false);
+          } else {
+            close();
+          }
+        }
+        function pick() {
+          input.value = suggestion();
+          close();
+          input.focus();
+        }
+        input.addEventListener('input', refresh);
+        input.addEventListener('focus', refresh);
+        input.addEventListener('keydown', function(e) {
+          if (box.hidden) return;
+          if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); setActive(true); }
+          else if (e.key === 'Enter' && active) { e.preventDefault(); pick(); }
+          else if (e.key === 'Escape') { close(); }
         });
+        item.addEventListener('mousedown', function(e) { e.preventDefault(); pick(); });
+        input.addEventListener('blur', function() { setTimeout(close, 150); });
       })();
     </script>
   </body>

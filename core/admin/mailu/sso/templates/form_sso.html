@@ -8,10 +8,9 @@
     {{ form.hidden_tag() }}
     <div class="sso-field" data-mail-domain="{{ config['DOMAIN'] if config['DOMAIN'] and config['DOMAIN'] != 'mailu.io' else '' }}">
       <label class="sso-label" for="email">{% trans %}E-mail{% endtrans %}</label>
-      {{ form.email(class_="sso-input", list="sso-mail-domain", autofocus=True, placeholder="you@example.com") }}
-      <datalist id="sso-mail-domain"></datalist>
+      {{ form.email(class_="sso-input", autofocus=True, placeholder="you@example.com") }}
       {%- if config['DOMAIN'] and config['DOMAIN'] != 'mailu.io' %}
-      <p class="sso-domain-tip">输入用户名后,可点击提示选择 @{{ config['DOMAIN'] }}</p>
+      <p class="sso-domain-tip">输入用户名后,点击提示选择 @{{ config['DOMAIN'] }}</p>
       {%- endif %}
       {%- for error in form.email.errors %}
       <p class="sso-error">{{ error }}</p>
