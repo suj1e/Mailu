@@ -722,6 +722,22 @@ body.sso-split .sso-app {
   transition: border-color .14s, box-shadow .14s;
 }
 .sso-input::placeholder { color: var(--nt-ink-faint); }
+.sso-pw-wrap { position: relative; }
+.sso-pw-wrap .sso-input { padding-right: 42px; }
+.sso-pw-eye {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--nt-ink-faint);
+  font-size: 13px;
+  line-height: 1;
+}
+.sso-pw-eye:hover { color: var(--nt-ink); }
 .sso-input:focus {
   outline: none;
   border-color: var(--nt-primary);

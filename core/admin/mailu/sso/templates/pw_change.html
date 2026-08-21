@@ -8,21 +8,30 @@
     {{ form.hidden_tag() }}
     <div class="sso-field">
       <label class="sso-label" for="oldpw">{% trans %}Current password{% endtrans %}</label>
-      {{ form.oldpw(class_="sso-input", autofocus=True) }}
+      <div class="sso-pw-wrap">
+        {{ form.oldpw(class_="sso-input", autofocus=True) }}
+        <button type="button" class="sso-pw-eye" tabindex="-1" aria-label="显示密码"><i class="fas fa-eye" aria-hidden="true"></i></button>
+      </div>
       {%- for error in form.oldpw.errors %}
       <p class="sso-error">{{ error }}</p>
       {%- endfor %}
     </div>
     <div class="sso-field">
       <label class="sso-label" for="pw">{% trans %}Password{% endtrans %}</label>
-      {{ form.pw(class_="sso-input") }}
+      <div class="sso-pw-wrap">
+        {{ form.pw(class_="sso-input") }}
+        <button type="button" class="sso-pw-eye" tabindex="-1" aria-label="显示密码"><i class="fas fa-eye" aria-hidden="true"></i></button>
+      </div>
       {%- for error in form.pw.errors %}
       <p class="sso-error">{{ error }}</p>
       {%- endfor %}
     </div>
     <div class="sso-field">
       <label class="sso-label" for="pw2">{% trans %}Password check{% endtrans %}</label>
-      {{ form.pw2(class_="sso-input") }}
+      <div class="sso-pw-wrap">
+        {{ form.pw2(class_="sso-input") }}
+        <button type="button" class="sso-pw-eye" tabindex="-1" aria-label="显示密码"><i class="fas fa-eye" aria-hidden="true"></i></button>
+      </div>
       {%- for error in form.pw2.errors %}
       <p class="sso-error">{{ error }}</p>
       {%- endfor %}

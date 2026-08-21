@@ -15,7 +15,10 @@
     </div>
     <div class="sso-field">
       <label class="sso-label" for="pw">{% trans %}Password{% endtrans %}</label>
-      {{ form.pw(class_="sso-input", placeholder="••••••••") }}
+      <div class="sso-pw-wrap">
+        {{ form.pw(class_="sso-input", placeholder="••••••••") }}
+        <button type="button" class="sso-pw-eye" tabindex="-1" aria-label="显示密码"><i class="fas fa-eye" aria-hidden="true"></i></button>
+      </div>
       {%- for error in form.pw.errors %}
       <p class="sso-error">{{ error }}</p>
       {%- endfor %}
