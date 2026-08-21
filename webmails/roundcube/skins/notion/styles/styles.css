@@ -473,9 +473,22 @@ html.layout-phone #layout-menu .popover-header a .inner {
   }
 }
 @media screen and (min-width: 1201px) {
-  /* notion: the message view is a standalone page (no list pane); keep its back button */
+  /* notion: the message view is a standalone page (no list pane); keep its back
+     button in the toolbar row regardless of the elastic hide rules */
+  body.task-mail.action-show #layout-content > .header {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+  }
   body.task-mail.action-show #layout-content > .header a.back-list-button {
-    display: inline-block;
+    display: inline-block !important;
+    flex: 0 0 auto;
+    margin: 0 4px 0 0;
+  }
+  body.task-mail.action-show #layout-content > .header a.back-list-button:before {
+    height: 15px !important;
+    line-height: 15px;
+    font-size: 13px;
   }
 }
 html.layout-phone .hidden-phone {
