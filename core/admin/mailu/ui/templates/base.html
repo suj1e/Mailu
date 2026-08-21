@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% trans %}Admin page for{% endtrans %} {{ config["SITENAME"] }}">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Mailu-Admin | {{ config["SITENAME"] }}</title>
+    <title>{{ config["SITENAME"] or config["WEBSITE_NAME"] }} | Admin</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
   </head>

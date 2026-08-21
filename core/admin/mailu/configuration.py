@@ -62,6 +62,7 @@ DEFAULT_CONFIG = {
     'RECIPIENT_DELIMITER': '',
     # Web settings
     'SITENAME': 'Mailu',
+    'WEBSITE_NAME': None,
     'WEBSITE': 'https://mailu.io',
     'ADMIN': 'none',
     'WEB_ADMIN': '/admin',

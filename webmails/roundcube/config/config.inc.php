@@ -57,7 +57,7 @@ $config['managesieve_conn_options'] = array(
 $config['managesieve_mbox_encoding'] = 'UTF8';
 
 // roundcube customization
-$config['product_name'] = 'Mailu Webmail';
+$config['product_name'] = '{{ SITENAME or WEBSITE_NAME }}';
 {%- if ADMIN and WEB_ADMIN %}
 $config['support_url'] = '../..{{ WEB_ADMIN }}';
 {%- endif %}

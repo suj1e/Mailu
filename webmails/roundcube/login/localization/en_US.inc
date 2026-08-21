@@ -1,4 +1,4 @@
 <?php
 $labels = [];
-$labels['mailu'] = 'Mailu';
+$labels['mailu'] = '客户端';
 ?>

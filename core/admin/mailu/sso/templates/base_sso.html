@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ config["SITENAME"] }}">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ config["SITENAME"] }}</title>
+    <title>{{ config["SITENAME"] or config["WEBSITE_NAME"] }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
   </head>
@@ -46,7 +46,7 @@
           {{ utils.flashed_messages(container=False, default_category='success') }}
         </div>
         {%- block content %}{%- endblock %}
-        <div class="sso-panel-foot">© 2026 {{ config["SITENAME"] }} · <a href="https://github.com/Mailu/Mailu" target="_blank" rel="noreferrer">Powered by Mailu</a></div>
+        <div class="sso-panel-foot">© 2026 {{ config["SITENAME"] }}</div>
       </div>
 
     </div>
