@@ -30,6 +30,7 @@ RUN set -euxo pipefail \
 # roundcube
 ENV ROUNDCUBE_URL https://github.com/roundcube/roundcubemail/releases/download/1.6.18/roundcubemail-1.6.18-complete.tar.gz
 ENV CARDDAV_URL https://github.com/mstilkerich/rcmcarddav/releases/download/v5.1.3/carddav-v5.1.3.tar.gz
+ENV GLOBALADDRESSBOOK_URL https://github.com/johndoh/roundcube-globaladdressbook/archive/refs/tags/2.1.tar.gz
 
 RUN set -euxo pipefail \
   ; cd /var/www \
@@ -41,6 +42,8 @@ RUN set -euxo pipefail \
   ; mv roundcubemail-* roundcube \
   ; mkdir -p /var/www/roundcube/config \
   ; mv carddav roundcube/plugins/ \
+  ; curl -sL ${GLOBALADDRESSBOOK_URL} | tar xz \
+  ; mv roundcube-globaladdressbook-2.1 roundcube/plugins/globaladdressbook \
   ; cd roundcube \
   ; rm -rf CHANGELOG.md SECURITY.md INSTALL LICENSE README.md UPGRADING composer.json-dist installer composer.* \
   ; ln -sf index.php /var/www/roundcube/public_html/sso.php \
@@ -51,6 +54,7 @@ RUN set -euxo pipefail \
 COPY roundcube/config/config.inc.php /conf/
 COPY roundcube/login/ /var/www/roundcube/plugins/mailu/
 COPY roundcube/config/config.inc.carddav.php /var/www/roundcube/plugins/carddav/config.inc.php
+COPY roundcube/config/config.inc.gab.php /conf/gab.inc.php
 
 # notion theme: elastic template overrides (official 1.6.18 sources with
 # minimal inserts — unified sidebar rail + section captions)

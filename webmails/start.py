@@ -57,7 +57,7 @@ plugins = dict((p, None) for p in env.get("ROUNDCUBE_PLUGINS", "").replace(" ", 
 if plugins:
     plugins["mailu"] = None
 else:
-    plugins = dict((k, None) for k in ["archive", "zipdownload", "markasjunk", "managesieve", "enigma", "carddav", "mailu"])
+    plugins = dict((k, None) for k in ["archive", "zipdownload", "markasjunk", "managesieve", "enigma", "carddav", "globaladdressbook", "mailu"])
 
 context["PLUGINS"] = ",".join(f"'{p}'" for p in plugins)
 
@@ -66,6 +66,11 @@ context["INCLUDES"] = sorted(inc for inc in os.listdir("/overrides") if inc.ends
 
 # create config files
 conf.jinja("/conf/config.inc.php", context, "/var/www/roundcube/config/config.inc.php")
+
+# globaladdressbook plugin config (admins from mailu.env, comma-separated)
+gab_admins = [a.strip() for a in env.get("ROUNDCUBE_GAB_ADMINS", "").replace(";", ",").split(",") if a.strip()]
+context["GAB_ADMINS"] = ", ".join(f"'{a}'" for a in gab_admins)
+conf.jinja("/conf/gab.inc.php", context, "/var/www/roundcube/plugins/globaladdressbook/config.inc.php")
 
 # create dirs
 os.system("mkdir -p /data/gpg")

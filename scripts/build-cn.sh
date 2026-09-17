@@ -20,6 +20,7 @@ sed -i 's#ghcr.io/mailu/alpine:3.20.10#ghcr.nju.edu.cn/mailu/alpine:3.20.10#' co
 #    (roundcube/carddav worked via ghproxy.net; snappymail needed gh-proxy.com)
 sed -i 's#https://github.com/roundcube#https://ghproxy.net/https://github.com/roundcube#' webmails/Dockerfile
 sed -i 's#https://github.com/mstilkerich#https://ghproxy.net/https://github.com/mstilkerich#' webmails/Dockerfile
+sed -i 's#https://github.com/johndoh#https://ghproxy.net/https://github.com/johndoh#' webmails/Dockerfile
 sed -i 's#https://github.com/the-djmaze#https://gh-proxy.com/https://github.com/the-djmaze#' webmails/Dockerfile
 
 echo "== Dockerfiles patched for CN network =="
